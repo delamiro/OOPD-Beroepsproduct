@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8332d88d-5f67-41f1-9a67-9b07dc8b9055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TitleScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/backgrounds/hampter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/hampter.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TitleScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +61,7 @@
       <recent name="org.example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jamir\Desktop\Github\OOPD-Beroepsproduct\OOPD-Beroepsproduct\src\main\resources\Sounds" />
       <recent name="C:\Users\jamir\Desktop\Github\OOPD-Beroepsproduct\OOPD-Beroepsproduct\src\main\resources\background" />
     </key>
   </component>
@@ -79,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710763368789</updated>
-      <workItem from="1710763370631" duration="1590000" />
+      <workItem from="1710763370631" duration="3779000" />
     </task>
     <servers />
   </component>

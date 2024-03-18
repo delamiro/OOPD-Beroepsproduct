@@ -3,4 +3,5 @@ module App {
 
     exports org.example;
     opens backgrounds;
+    opens sounds;
 }

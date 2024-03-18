@@ -12,7 +12,6 @@ public class App extends YaegerGame
 {
     public static void main( String[] args )
     {
-
         launch(args);
     }
 
