@@ -2,5 +2,5 @@ module App {
     requires hanyaeger;
 
     exports org.example;
-    //opens tiles;
+    opens backgrounds;
 }
