@@ -1,11 +1,8 @@
 package org.example;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.Size;
-import com.github.hanyaeger.api.entities.YaegerEntity;
-import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.api.scenes.YaegerScene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -13,26 +10,26 @@ import javafx.scene.text.FontWeight;
 public class TitleScene extends StaticScene {
 
     private static final String HAMTER_TEXT = "PLEASE GIVE ME A 10";
-    public TitleScene(App app) {
+    private Catgame catgame;
+    public TitleScene(Catgame catgame) {
+        this.catgame = catgame;
     }
 
     @Override
     public void setupScene() {
-        setBackgroundAudio("sounds/hampter.mp3");
-        setBackgroundImage("backgrounds/hampter.jpg");
+        //setBackgroundAudio("sounds/hampter.mp3");
+       // setBackgroundImage("backgrounds/hampter.jpg");
 
     }
 
     @Override
     public void setupEntities() {
-        var select = new TextEntity(new Coordinate2D(TextCenter(), getHeight()/2), HAMTER_TEXT);
-        select.setFill(Color.BLACK);
-        select.setFont(Font.font("Roboto", FontWeight.BOLD, 23));
-        addEntity(select);
-    }
 
-    public double TextCenter(){
-        double test = HAMTER_TEXT.length();
-        return (getWidth()/2) - (test/2);
+        StartButton startButton = new StartButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), catgame);
+        startButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        startButton.setFill(Color.BLACK);
+        startButton.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
+
+        addEntity(startButton);
     }
 }
