@@ -1,11 +1,11 @@
-package org.example;
+package org.example.scenes;
 
-import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+import org.example.Catgame;
+import org.example.entitys.PixelCat;
+import org.example.entitys.BlackPixelCat;
+import org.example.entitys.HealthText;
 
 public class GameLevel extends DynamicScene {
     Catgame catgame;
@@ -24,7 +24,10 @@ public class GameLevel extends DynamicScene {
         //pixelcat.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(pixelcat);
 
-        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        HealthText healthText = new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        addEntity(healthText);
+
+        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2), healthText, catgame);
         addEntity(blackPixelCat);
     }
 }

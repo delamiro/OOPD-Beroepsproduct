@@ -3,6 +3,10 @@ package org.example;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.YaegerScene;
+import org.example.scenes.GameLevel;
+import org.example.scenes.GameOver;
+import org.example.scenes.SecretScene;
+import org.example.scenes.TitleScene;
 
 
 /**
@@ -25,6 +29,8 @@ public class Catgame extends YaegerGame {
         addScene(0, (YaegerScene) new TitleScene(this));
         addScene(1, (YaegerScene) new SecretScene(this));
         addScene(2, (YaegerScene) new GameLevel(this));
+        addScene(3, (YaegerScene) new GameOver(this));
+
 
     }
 }
