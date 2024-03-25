@@ -23,5 +23,8 @@ public class GameLevel extends DynamicScene {
         PixelCat pixelcat = new PixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2));
         //pixelcat.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(pixelcat);
+
+        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        addEntity(blackPixelCat);
     }
 }
