@@ -1,4 +1,4 @@
-package org.example.scenes;
+package org.example.scenes.secret;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;

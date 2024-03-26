@@ -1,4 +1,4 @@
-package org.example.scenes;
+package org.example.scenes.levels;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
@@ -21,7 +21,6 @@ public class GameLevel extends DynamicScene {
     public void setupEntities() {
 
         PixelCat pixelcat = new PixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        //pixelcat.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(pixelcat);
 
         HealthText healthText = new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2));

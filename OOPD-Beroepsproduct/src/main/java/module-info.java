@@ -7,4 +7,7 @@ module App {
     opens sprites;
     exports org.example.entitys;
     exports org.example.scenes;
+    exports org.example.shared.buttons;
+    exports org.example.scenes.levels;
+    exports org.example.scenes.secret;
 }
