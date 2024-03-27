@@ -9,6 +9,7 @@ import org.example.scenes.secret.SecretScene;
 import org.example.scenes.selection.SelectionScene;
 
 
+
 /**
  * Hello world!
  */
@@ -17,10 +18,14 @@ public class Catgame extends YaegerGame {
         launch(args);
     }
 
+
+
+
     @Override
     public void setupGame() {
         setGameTitle("Cat_Game");
         setSize(new Size(800, 600));
+
     }
 
     @Override

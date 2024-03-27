@@ -10,4 +10,5 @@ module App {
     exports org.example.shared.buttons;
     exports org.example.scenes.levels;
     exports org.example.scenes.secret;
+    exports org.example.entitys.ingredients;
 }
