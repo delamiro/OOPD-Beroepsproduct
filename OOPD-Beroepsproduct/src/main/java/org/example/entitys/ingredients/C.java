@@ -1,11 +1,10 @@
 package org.example.entitys.ingredients;
 
-import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 
 import java.util.List;
 
-public interface Ingredient {
+public interface C {
     default void onPickup(){
 
     };

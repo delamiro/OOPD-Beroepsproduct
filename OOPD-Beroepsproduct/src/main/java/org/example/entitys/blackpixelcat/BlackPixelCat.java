@@ -9,10 +9,10 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import org.example.Catgame;
 import org.example.entitys.HealthText;
+import org.example.entitys.Ingredient;
 import org.example.entitys.IngredientText;
 import org.example.entitys.enemys.PixelCat;
 import org.example.entitys.enemys.Rat;
-import org.example.entitys.ingredients.Ingredient;
 import org.example.entitys.obstacle.Boomstronk;
 
 import java.util.List;
@@ -21,20 +21,17 @@ import java.util.Set;
 
 public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, SceneBorderCrossingWatcher, SceneBorderTouchingWatcher, Newtonian, Collided, Collider {
     private HealthText healthText;
-    private IngredientText ingredientText;
     Catgame catgame;
     private int health = 10;
     private int ingredientsToGo = 0;
-    public BlackPixelCat(Coordinate2D location, HealthText healthText, IngredientText ingredientText, Catgame catgame){
+    public BlackPixelCat(Coordinate2D location, HealthText healthText, Catgame catgame){
 
         super("sprites/blacCatPixel.png", location, new Size(40,80), 1, 2);
         setGravityConstant(1);
         setFrictionConstant(0.04);
         this.healthText = healthText;
-        this.ingredientText = ingredientText;
         this.catgame = catgame;
         healthText.setHealthText(health);
-        ingredientText.setIngredientText(ingredientsToGo);
     }
 
     @Override
@@ -82,12 +79,7 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
     public void onCollision(List<Collider> collidingObject){
 
         for (var collider : collidingObject) {
-            if (collider instanceof Ingredient) {
-                ingredientsToGo++;
-                ingredientText.setIngredientText(ingredientsToGo);
-
-
-            } else if (collider instanceof PixelCat){
+            if (collider instanceof PixelCat){
                 setAnchorLocation(new Coordinate2D(
                         new Random().nextInt((int) (getSceneWidth() - getWidth())),
                         new Random().nextInt((int) (getSceneHeight() - getHeight())))

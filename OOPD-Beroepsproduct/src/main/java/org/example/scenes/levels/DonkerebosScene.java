@@ -3,12 +3,15 @@ package org.example.scenes.levels;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
+import org.example.entitys.Ingredient;
 import org.example.entitys.IngredientText;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.HealthText;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.KattenklauwBladeren;
 import org.example.entitys.obstacle.Boomstronk;
+
+import java.util.Random;
 
 
 public class DonkerebosScene extends DynamicScene {
@@ -38,10 +41,21 @@ public class DonkerebosScene extends DynamicScene {
         IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
-
-        KattenklauwBladeren kattenklauwBladeren = new KattenklauwBladeren(new Coordinate2D(getWidth() / 2 + 20, getHeight() / 2 + 20));
+        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, catgame);
+        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame);
         addEntity(kattenklauwBladeren);
-        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, ingredientText, catgame);
+        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame);
+        addEntity(mandragoraWortel);
+        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame);
+        addEntity(zwarteNachtschadeBessen);
+        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame);
+        addEntity(drakentandPoeder);
+        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame);
+        addEntity(schedelPoeder);
+
+
+
+
 
         Boomstronk boomstronk = new Boomstronk(new Coordinate2D(getWidth() / 2 + 20, getHeight()- 100),blackPixelCat);
 
@@ -51,16 +65,11 @@ public class DonkerebosScene extends DynamicScene {
 
         addEntity(boomstronk);
         addEntity(blackPixelCat);
-//        ingredients.add(new MandragoraWortel());
-//        ingredients.add(new KattenklauwBladeren(new Coordinate2D(getWidth() / 2, getHeight() / 2)));
-////        ingredients.add(new ZwarteNachtschadeBessen()); 1
-////        ingredients.add(new DrakentandPoeder());  1
-////        ingredients.add(new SchedelPoeder()); 1
-////        ingredients.add(new GeestelijkStof()); 1
-////        ingredients.add(new GriezeligeSpinnenpoten());
-////        ingredients.add(new VleermuizenBloed()); 1
-////        ingredients.add(new HeksenkruidZaden()); 1
-////        ingredients.add(new MaanlichtKristallen()); 1
-
+        
+    }
+    public Coordinate2D returnRandomLocation(){
+        return new Coordinate2D(
+                new Random().nextInt((int) (getWidth())),
+                new Random().nextInt((int) (getHeight())));
     }
 }

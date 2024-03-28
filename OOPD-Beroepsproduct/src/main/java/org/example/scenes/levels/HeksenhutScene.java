@@ -8,8 +8,9 @@ import org.example.entitys.HealthText;
 import org.example.entitys.IngredientText;
 
 public class HeksenhutScene extends DynamicScene {
-
-    Catgame catgame;
+    public static final double LEFT_MARGIN = 34;
+    private static final double DELTA_Y = 40;
+    private final Catgame catgame;
     public HeksenhutScene(Catgame catgame) {
         this.catgame = catgame;
     }
@@ -20,14 +21,13 @@ public class HeksenhutScene extends DynamicScene {
 
     @Override
     public void setupEntities() {
-
-        HealthText healthText = new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        var y = 20;
+        HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
 
-        IngredientText ingredientText = new IngredientText(new Coordinate2D(getWidth() / 2 - 60, getHeight() / 2 - 40));
-        addEntity(ingredientText);
+        y+= DELTA_Y;
 
-        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, ingredientText, catgame);
-        addEntity(blackPixelCat);
+        IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
+        addEntity(ingredientText);
     }
 }

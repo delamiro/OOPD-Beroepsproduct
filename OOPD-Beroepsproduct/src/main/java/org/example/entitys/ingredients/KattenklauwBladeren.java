@@ -4,10 +4,11 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
+import org.example.entitys.blackpixelcat.BlackPixelCat;
 
 import java.util.List;
 
-public class KattenklauwBladeren extends SpriteEntity implements Ingredient, Collider, Collided {
+public class KattenklauwBladeren extends SpriteEntity implements C, Collider, Collided {
 
     public KattenklauwBladeren(Coordinate2D location){
         super("entitys/kattenklauwBladeren.png", location);
@@ -24,10 +25,8 @@ public class KattenklauwBladeren extends SpriteEntity implements Ingredient, Col
     }
     @Override
     public void onCollision(List<Collider> collidingObject){
-        remove();
+        if(collidingObject instanceof BlackPixelCat){
+            remove();
+        }
     }
-
-
-
-
 }
