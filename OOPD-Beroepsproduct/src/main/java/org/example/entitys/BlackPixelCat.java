@@ -20,7 +20,7 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
     private HealthText healthText;
     private IngredientText ingredientText;
     Catgame catgame;
-    private int health = 2;
+    private int health = 10;
     private int ingredientsToGo = 0;
     public BlackPixelCat(Coordinate2D location, HealthText healthText, IngredientText ingredientText, Catgame catgame){
 

@@ -22,7 +22,6 @@ public class KattenklauwBladeren extends SpriteEntity implements Ingredient, Col
         // when picked up
 
     }
-
     @Override
     public void onCollision(List<Collider> collidingObject){
         remove();

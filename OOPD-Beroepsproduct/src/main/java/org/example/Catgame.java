@@ -18,6 +18,17 @@ public class Catgame extends YaegerGame {
     public static void main(String[] args) {
         launch(args);
     }
+    public static final int SCENE_SELECTION = 0;
+    public static final int SCENE_SECRET = 1;
+    public static final String SCENE_SECRET_TITLE = "Secret";
+
+    public static final String SCENE_SELECTION_TITLE = "Selection";
+    public static final int SCENE_DONKEREBOS = 2;
+    public static final String SCENE_DONKEREBOS_TITLE = "Donkere bos";
+    public static final int SCENE_HEKSENHUT = 3;
+    public static final String SCENE_HEKSENHUT_TITLE = "Heksen hut";
+    public static final int SCENE_GAME_OVER = 4;
+    public static final String SCENE_GAME_OVER_TITLE = "Game Over";
 
 
 
@@ -31,12 +42,16 @@ public class Catgame extends YaegerGame {
 
     @Override
     public void setupScenes() {
-
-        addScene(0, (YaegerScene) new SelectionScene(this));
-        addScene(1, (YaegerScene) new SecretScene(this));
-        addScene(2, (YaegerScene) new DonkerebosScene(this));
-        addScene(3, (YaegerScene) new HeksenhutScene(this));
-        addScene(4, (YaegerScene) new GameOver(this));
+        var selection = new SelectionScene(this);
+        addScene(SCENE_SELECTION, selection);
+        var secretScene = new SecretScene(this);
+        addScene(SCENE_SECRET, secretScene);
+        var donkerebosScene = new DonkerebosScene(this);
+        addScene(SCENE_DONKEREBOS, donkerebosScene);
+        var heksenHut = new HeksenhutScene(this);
+        addScene(SCENE_HEKSENHUT,heksenHut);
+        var gameOver = new GameOver(this);
+        addScene(SCENE_GAME_OVER,gameOver);
 
 
     }
