@@ -104,7 +104,7 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
         }
 
         if(health < 0){
-            catgame.setActiveScene(1);
+            catgame.setActiveScene(4);
         }
     }
 }

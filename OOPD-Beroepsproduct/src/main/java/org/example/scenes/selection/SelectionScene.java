@@ -4,7 +4,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import org.example.Catgame;
 import org.example.shared.buttons.QuitButton;
-import org.example.shared.buttons.StartButton;
+import org.example.shared.buttons.SelectionButton;
 
 public class SelectionScene extends StaticScene {
 
@@ -23,7 +23,7 @@ public class SelectionScene extends StaticScene {
     @Override
     public void setupEntities() {
 
-        var startButton = new StartButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), catgame);
+        var startButton = new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Start",catgame,2);
         addEntity(startButton);
 
         var quitButton = new QuitButton(new Coordinate2D(getWidth() / 2, getHeight() / 2 + 50), catgame);

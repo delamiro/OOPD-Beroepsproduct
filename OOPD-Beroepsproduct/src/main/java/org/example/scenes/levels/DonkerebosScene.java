@@ -4,32 +4,28 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.IngredientText;
-import org.example.entitys.enemys.PixelCat;
 import org.example.entitys.BlackPixelCat;
 import org.example.entitys.HealthText;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.KattenklauwBladeren;
 
 
-public class GameLevel extends DynamicScene {
+public class DonkerebosScene extends DynamicScene {
     Catgame catgame;
-    public GameLevel(Catgame catgame) {
+    public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
     }
 
 
     @Override
     public void setupScene() {
-
+        setBackgroundImage("backgrounds/forrest.jpg");
     }
 
     @Override
     public void setupEntities() {
 
-        PixelCat pixelcat = new PixelCat(new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        ///addEntity(pixelcat);
-
-        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-84));
+        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-44));
         addEntity(rat);
 
         HealthText healthText = new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2));

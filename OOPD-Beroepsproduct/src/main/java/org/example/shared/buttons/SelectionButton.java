@@ -1,5 +1,6 @@
 package org.example.shared.buttons;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
@@ -13,6 +14,8 @@ public class SelectionButton extends Button {
 
     public SelectionButton(Coordinate2D initialLocation, final String text, final Catgame catgame, final int scene) {
         super(new Coordinate2D(initialLocation), text, scene);
+        setAnchorPoint(AnchorPoint.CENTER_CENTER);
+
         this.catgame = catgame;
 
         setFill(Color.BLACK);
