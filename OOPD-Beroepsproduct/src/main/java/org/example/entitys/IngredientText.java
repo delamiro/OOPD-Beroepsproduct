@@ -13,7 +13,7 @@ public class IngredientText extends TextEntity {
         super(initialLocation);
 
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
-        setFill(Color.DARKRED);
+        setFill(Color.GREEN);
     }
 
     public void setIngredientText(int ingredientsToGo){

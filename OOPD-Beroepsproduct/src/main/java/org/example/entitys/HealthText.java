@@ -12,7 +12,7 @@ public class HealthText extends TextEntity {
         super(initialLocation);
 
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
-        setFill(Color.DARKBLUE);
+        setFill(Color.WHITE);
     }
 
     public void setHealthText(int health){

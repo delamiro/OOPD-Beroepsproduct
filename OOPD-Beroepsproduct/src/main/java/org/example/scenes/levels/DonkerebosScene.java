@@ -11,7 +11,10 @@ import org.example.entitys.ingredients.KattenklauwBladeren;
 
 
 public class DonkerebosScene extends DynamicScene {
-    Catgame catgame;
+    public static final double LEFT_MARGIN = 34;
+    private static final double DELTA_Y = 40;
+
+    private final Catgame catgame;
     public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
     }
@@ -28,10 +31,13 @@ public class DonkerebosScene extends DynamicScene {
         Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-44));
         addEntity(rat);
 
-        HealthText healthText = new HealthText(new Coordinate2D(getWidth() / 2, getHeight() / 2));
+        var y = 20;
+        HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
 
-        IngredientText ingredientText = new IngredientText(new Coordinate2D(getWidth() / 2 - 60, getHeight() / 2 - 40));
+        y+= DELTA_Y;
+
+        IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
         BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, ingredientText, catgame);
