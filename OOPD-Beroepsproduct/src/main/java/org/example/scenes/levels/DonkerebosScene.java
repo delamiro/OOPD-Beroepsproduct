@@ -4,10 +4,11 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.IngredientText;
-import org.example.entitys.BlackPixelCat;
+import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.HealthText;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.KattenklauwBladeren;
+import org.example.entitys.obstacle.Boomstronk;
 
 
 public class DonkerebosScene extends DynamicScene {
@@ -28,9 +29,6 @@ public class DonkerebosScene extends DynamicScene {
     @Override
     public void setupEntities() {
 
-        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-44));
-        addEntity(rat);
-
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
@@ -40,12 +38,19 @@ public class DonkerebosScene extends DynamicScene {
         IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
-        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, ingredientText, catgame);
-        addEntity(blackPixelCat);
 
         KattenklauwBladeren kattenklauwBladeren = new KattenklauwBladeren(new Coordinate2D(getWidth() / 2 + 20, getHeight() / 2 + 20));
         addEntity(kattenklauwBladeren);
+        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, ingredientText, catgame);
 
+        Boomstronk boomstronk = new Boomstronk(new Coordinate2D(getWidth() / 2 + 20, getHeight()- 100),blackPixelCat);
+
+        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-44));
+        //addEntity(rat);
+
+
+        addEntity(boomstronk);
+        addEntity(blackPixelCat);
 //        ingredients.add(new MandragoraWortel());
 //        ingredients.add(new KattenklauwBladeren(new Coordinate2D(getWidth() / 2, getHeight() / 2)));
 ////        ingredients.add(new ZwarteNachtschadeBessen()); 1

@@ -3,7 +3,7 @@ package org.example.scenes.levels;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
-import org.example.entitys.BlackPixelCat;
+import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.HealthText;
 import org.example.entitys.IngredientText;
 

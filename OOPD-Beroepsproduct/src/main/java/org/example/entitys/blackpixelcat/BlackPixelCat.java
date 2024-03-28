@@ -1,4 +1,4 @@
-package org.example.entitys;
+package org.example.entitys.blackpixelcat;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
@@ -8,9 +8,12 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import org.example.Catgame;
+import org.example.entitys.HealthText;
+import org.example.entitys.IngredientText;
 import org.example.entitys.enemys.PixelCat;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Ingredient;
+import org.example.entitys.obstacle.Boomstronk;
 
 import java.util.List;
 import java.util.Random;
@@ -37,15 +40,15 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys){
         if(pressedKeys.contains(KeyCode.LEFT)){
-            setMotion(3,270d);
+            setMotion(2,270d);
             setCurrentFrameIndex(0);
         } else if(pressedKeys.contains(KeyCode.RIGHT)){
-            setMotion(3,90d);
+            setMotion(2,90d);
             setCurrentFrameIndex(1);
         } else if(pressedKeys.contains(KeyCode.UP)){
-            setMotion(3,180d);
+            setMotion(2,180d);
         } else if(pressedKeys.contains(KeyCode.DOWN)){
-            setMotion(3,0d);
+            setMotion(2,0d);
         }
     }
 
@@ -99,6 +102,9 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
                 );
                 health--;
                 healthText.setHealthText(health);
+            }
+            else if(collider instanceof Boomstronk){
+                setSpeed(0);
             }
 
         }
