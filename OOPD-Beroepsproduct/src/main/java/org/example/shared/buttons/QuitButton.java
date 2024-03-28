@@ -14,6 +14,6 @@ public class QuitButton extends SelectionButton {
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        catgame.setActiveScene(-1);
+        catgame.quit();
     }
 }
