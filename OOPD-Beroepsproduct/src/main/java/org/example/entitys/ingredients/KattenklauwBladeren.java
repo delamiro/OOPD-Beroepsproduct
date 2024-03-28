@@ -10,7 +10,7 @@ import java.util.List;
 public class KattenklauwBladeren extends SpriteEntity implements Ingredient, Collider, Collided {
 
     public KattenklauwBladeren(Coordinate2D location){
-        super("sprites/kattenklauwBladeren.png", location);
+        super("entitys/kattenklauwBladeren.png", location);
     }
     @Override
     public String getName() {
@@ -25,8 +25,7 @@ public class KattenklauwBladeren extends SpriteEntity implements Ingredient, Col
 
     @Override
     public void onCollision(List<Collider> collidingObject){
-        //remove();
-        // WHY ISNT THIS WORKING IT SHOULD WORK WHY IS REMOVE NOT WORKING IT DID IN THE TUTORIAL ???
+        remove();
     }
 
 

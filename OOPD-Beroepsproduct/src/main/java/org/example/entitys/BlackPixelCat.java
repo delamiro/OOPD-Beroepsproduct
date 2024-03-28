@@ -8,8 +8,9 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import org.example.Catgame;
+import org.example.entitys.enemys.PixelCat;
+import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Ingredient;
-import org.example.entitys.ingredients.KattenklauwBladeren;
 
 import java.util.List;
 import java.util.Random;
@@ -23,7 +24,7 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
     private int ingredientsToGo = 0;
     public BlackPixelCat(Coordinate2D location, HealthText healthText, IngredientText ingredientText, Catgame catgame){
 
-        super("sprites/blacCatPixel.png", location, new Size(20,40), 1, 2);
+        super("sprites/blacCatPixel.png", location, new Size(40,80), 1, 2);
         setGravityConstant(1);
         setFrictionConstant(0.04);
         this.healthText = healthText;
@@ -91,6 +92,15 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
                 health--;
                 healthText.setHealthText(health);
             }
+            else if (collider instanceof Rat){
+                setAnchorLocation(new Coordinate2D(
+                        new Random().nextInt((int) (getSceneWidth() - getWidth())),
+                        new Random().nextInt((int) (getSceneHeight() - getHeight())))
+                );
+                health--;
+                healthText.setHealthText(health);
+            }
+
         }
 
         if(health < 0){

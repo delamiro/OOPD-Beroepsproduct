@@ -1,4 +1,4 @@
-package org.example.entitys;
+package org.example.entitys.enemys;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
@@ -22,6 +22,6 @@ public class PixelCat extends DynamicSpriteEntity implements SceneBorderCrossing
 
     @Override
     public void onCollision(List<Collider> list) {
-
+        setAnchorLocationX(getSceneWidth());
     }
 }
