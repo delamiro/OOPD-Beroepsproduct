@@ -9,9 +9,6 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import org.example.Catgame;
 import org.example.entitys.HealthText;
-import org.example.entitys.Ingredient;
-import org.example.entitys.IngredientText;
-import org.example.entitys.enemys.PixelCat;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.obstacle.Boomstronk;
 
@@ -79,14 +76,7 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, S
     public void onCollision(List<Collider> collidingObject){
 
         for (var collider : collidingObject) {
-            if (collider instanceof PixelCat){
-                setAnchorLocation(new Coordinate2D(
-                        new Random().nextInt((int) (getSceneWidth() - getWidth())),
-                        new Random().nextInt((int) (getSceneHeight() - getHeight())))
-                );
-                health--;
-                healthText.setHealthText(health);
-            }
+
             else if (collider instanceof Rat){
                 setAnchorLocation(new Coordinate2D(
                         new Random().nextInt((int) (getSceneWidth() - getWidth())),
