@@ -1,13 +1,13 @@
-package org.example.scenes;
+package org.example.scenes.gameoverscreens;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import org.example.Catgame;
 import org.example.shared.buttons.SelectionButton;
 
-public class GameOver extends StaticScene {
+public class GameOverBad extends StaticScene {
     private Catgame catgame;
-    public GameOver(Catgame catgame) {
+    public GameOverBad(Catgame catgame) {
         this.catgame = catgame;
     }
     @Override

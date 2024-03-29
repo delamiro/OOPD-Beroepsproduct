@@ -2,9 +2,8 @@ package org.example;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.scenes.YaegerScene;
 import org.example.scenes.levels.DonkerebosScene;
-import org.example.scenes.GameOver;
+import org.example.scenes.gameoverscreens.GameOverBad;
 import org.example.scenes.levels.HeksenhutScene;
 import org.example.scenes.secret.SecretScene;
 import org.example.scenes.selection.SelectionScene;
@@ -50,7 +49,7 @@ public class Catgame extends YaegerGame {
         addScene(SCENE_DONKEREBOS, donkerebosScene);
         var heksenHut = new HeksenhutScene(this);
         addScene(SCENE_HEKSENHUT,heksenHut);
-        var gameOver = new GameOver(this);
+        var gameOver = new GameOverBad(this);
         addScene(SCENE_GAME_OVER,gameOver);
 
 

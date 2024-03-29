@@ -14,4 +14,5 @@ module App {
     exports org.example.entitys.ingredients;
     exports org.example.entitys.enemys;
     exports org.example.entitys.blackpixelcat;
+    exports org.example.scenes.gameoverscreens;
 }

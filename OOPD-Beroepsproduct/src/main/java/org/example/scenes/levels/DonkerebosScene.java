@@ -18,6 +18,8 @@ public class DonkerebosScene extends DynamicScene {
     public static final double LEFT_MARGIN = 34;
     private static final double DELTA_Y = 40;
 
+    public int scene = 2;
+
     private final Catgame catgame;
     public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
@@ -42,15 +44,15 @@ public class DonkerebosScene extends DynamicScene {
         addEntity(ingredientText);
 
         BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, catgame);
-        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame);
+        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
         addEntity(kattenklauwBladeren);
-        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame);
+        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(mandragoraWortel);
-        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame);
+        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(zwarteNachtschadeBessen);
-        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame);
+        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(drakentandPoeder);
-        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame);
+        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(schedelPoeder);
 
 
@@ -65,7 +67,7 @@ public class DonkerebosScene extends DynamicScene {
 
         addEntity(boomstronk);
         addEntity(blackPixelCat);
-        
+
     }
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
