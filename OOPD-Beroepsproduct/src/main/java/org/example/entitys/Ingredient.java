@@ -9,14 +9,8 @@ import org.example.Catgame;
 import java.util.List;
 
 public class Ingredient  extends SpriteEntity implements  Collider {
-    IngredientText ingredientText;
-    Catgame catgame;
-
-    int scene;
     public Ingredient(String resource, Coordinate2D initialLocation, IngredientText ingredientText, Catgame catgame, int scene) {
         super(resource, initialLocation, new Size(50,50));
-        this.ingredientText = ingredientText;
-        this.catgame = catgame;
-        this.scene = scene;
+
     }
 }
