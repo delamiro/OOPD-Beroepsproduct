@@ -2,6 +2,7 @@ package org.example;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import org.example.scenes.gameoverscreens.GameOverGood;
 import org.example.scenes.levels.DonkerebosScene;
 import org.example.scenes.gameoverscreens.GameOverBad;
 import org.example.scenes.levels.HeksenhutScene;
@@ -29,6 +30,10 @@ public class Catgame extends YaegerGame {
     public static final int SCENE_GAME_OVER = 4;
     public static final String SCENE_GAME_OVER_TITLE = "Game Over";
 
+    public static final int SCENE_GAME_WON = 5;
+
+    public static final String SCENE_GAME_WON_TITLE = "Game Won";
+
 
 
 
@@ -51,6 +56,8 @@ public class Catgame extends YaegerGame {
         addScene(SCENE_HEKSENHUT,heksenHut);
         var gameOver = new GameOverBad(this);
         addScene(SCENE_GAME_OVER,gameOver);
+        var gameWon = new GameOverGood(this);
+        addScene(SCENE_GAME_WON,gameWon);
 
 
     }

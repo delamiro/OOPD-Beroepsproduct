@@ -6,7 +6,6 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 import org.example.Catgame;
-import org.example.scenes.levels.HeksenhutScene;
 
 
 import java.util.List;
@@ -27,8 +26,13 @@ public class Ingredient  extends SpriteEntity implements  Collider, Collided {
     public void onCollision(List<Collider> list) {
             ingredientText.upIngredientText();
             remove();
-            if(ingredientText.getIngredientsToGo() == 5){
-                catgame.setActiveScene(scene + 1);
+            if(ingredientText.getIngredientsFound() == 5){
+                if (scene == 2){
+                    catgame.setActiveScene(scene + 1);
+                } else if(scene == 3){
+                    catgame.setActiveScene(scene + 2);
+                }
+
             }
     }
 }

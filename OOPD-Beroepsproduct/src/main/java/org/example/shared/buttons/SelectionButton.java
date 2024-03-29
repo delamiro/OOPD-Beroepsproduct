@@ -18,7 +18,7 @@ public class SelectionButton extends Button {
 
         this.catgame = catgame;
 
-        setFill(Color.BLACK);
+        setFill(Color.BLUE);
     }
 
     @Override

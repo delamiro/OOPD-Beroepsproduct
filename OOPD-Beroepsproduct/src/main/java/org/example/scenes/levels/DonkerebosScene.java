@@ -72,6 +72,7 @@ public class DonkerebosScene extends DynamicScene {
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
                 new Random().nextInt((int) (getWidth())),
-                new Random().nextInt((int) (getHeight())));
+                new Random().nextInt((int) (getHeight()))
+        );
     }
 }
