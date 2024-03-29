@@ -2,30 +2,17 @@ package org.example.entitys.enemys;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
-import com.github.hanyaeger.api.entities.Collided;
-import com.github.hanyaeger.api.entities.Collider;
-import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
-import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 
-import java.util.List;
 
-public class Rat extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collided, Collider {
-    private double x;
-    public Rat(Coordinate2D location){
-        super("entitys/RATATA.png", location , new Size(40,44));
-        this.x = location.getX();
+public class Rat extends Enemy {
+    public Rat(final Coordinate2D initialLocation) {
+        super("entitys/RATATA.png", initialLocation, new Size(50,50));
         setMotion(2, 270d);
-        //movement();
     }
 
     @Override
-    public void onCollision(List<Collider> list) {
-
-    }
-
-    @Override
-    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+    public void notifyBoundaryCrossing(SceneBorder border) {
         changeDirection(180);
     }
 }

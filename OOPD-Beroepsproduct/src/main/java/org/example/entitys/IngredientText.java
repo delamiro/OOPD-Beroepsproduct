@@ -8,14 +8,14 @@ import javafx.scene.text.FontWeight;
 
 public class IngredientText extends TextEntity {
 
-    private int ingredientsFound = 0;
+    private int ingredientsToGo = 0;
     private String INGREDIENTS_TEXT = "Ingredients to go: ";
     public IngredientText(Coordinate2D initialLocation) {
         super(initialLocation);
 
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         setFill(Color.GREEN);
-        setText(INGREDIENTS_TEXT + ingredientsFound);
+        setText(INGREDIENTS_TEXT + ingredientsToGo);
     }
 
     public void setIngredientText(int ingredientsToGo){
@@ -23,10 +23,10 @@ public class IngredientText extends TextEntity {
     }
 
     public void upIngredientText(){
-        ingredientsFound++;
-        setText("Ingredients to go: " + ingredientsFound);
+        ingredientsToGo++;
+        setText("Ingredients to go: " + ingredientsToGo);
     }
-    public int getIngredientsFound(){
-        return ingredientsFound;
+    public int getIngredientsToGo(){
+        return ingredientsToGo;
     }
 }

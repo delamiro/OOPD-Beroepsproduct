@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8332d88d-5f67-41f1-9a67-9b07dc8b9055" name="Changes" comment="" />
+    <list default="true" id="8332d88d-5f67-41f1-9a67-9b07dc8b9055" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Catgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Catgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/DonkerebosScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/DonkerebosScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/HeksenhutScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/HeksenhutScene.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,13 +42,14 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.App.executor": "Run",
+    "Application.Catgame.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jamir/Desktop/Git-Web/OOPD-Beroepsproduct",
+    "last_opened_file_path": "C:/Users/jamir/Desktop/Git-Web/OOPD-Beroepsproduct/OOPD-Beroepsproduct",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +67,13 @@
       <recent name="C:\Users\jamir\Desktop\Github\OOPD-Beroepsproduct\OOPD-Beroepsproduct\src\main\resources\background" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +84,7 @@
       <updated>1710763368789</updated>
       <workItem from="1710763370631" duration="3779000" />
       <workItem from="1710770935924" duration="26000" />
+      <workItem from="1711728285104" duration="437000" />
     </task>
     <servers />
   </component>
