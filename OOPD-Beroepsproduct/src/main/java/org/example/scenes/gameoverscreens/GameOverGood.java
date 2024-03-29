@@ -23,12 +23,13 @@ public class GameOverGood extends StaticScene {
 
     @Override
     public void setupEntities() {
-        var winText = new TextEntity(new Coordinate2D(getWidth()/2, getHeight() / 2 -90), "You won!");
+        var winText = new TextEntity(new Coordinate2D(getWidth()/3, getHeight() / 4), "You won!");
         winText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         winText.setFill(Color.BLACK);
         winText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
         addEntity(winText);
-        var playAgain =  new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Play again",catgame,2);
+        var playAgain =  new SelectionButton(new Coordinate2D(getWidth() / 3 + 40, getHeight() / 3), "Play again",catgame,2);
+        playAgain.setFill(Color.BLACK);
         addEntity(playAgain);
     }
 }

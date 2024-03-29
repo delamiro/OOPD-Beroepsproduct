@@ -17,7 +17,7 @@ public class SelectionScene extends StaticScene {
 
     @Override
     public void setupScene() {
-
+        setBackgroundImage("backgrounds/witchhatcat.jpg");
     }
 
     @Override
