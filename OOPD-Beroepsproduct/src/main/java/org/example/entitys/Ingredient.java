@@ -7,7 +7,6 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 import org.example.Catgame;
 
-
 import java.util.List;
 
 public class Ingredient  extends SpriteEntity implements  Collider, Collided {
@@ -23,16 +22,15 @@ public class Ingredient  extends SpriteEntity implements  Collider, Collided {
     }
 
     @Override
-    public void onCollision(List<Collider> list) {
-            ingredientText.upIngredientText();
-            remove();
-            if(ingredientText.getIngredientsFound() == 5){
-                if (scene == 2){
-                    catgame.setActiveScene(scene + 1);
-                } else if(scene == 3){
-                    catgame.setActiveScene(scene + 2);
-                }
-
+    public void onCollision(List<Collider> collidingObjects) {
+        ingredientText.upIngredientText();
+        remove();
+        if(ingredientText.getIngredientsToGo() == 5){
+            if (scene == 2){
+                catgame.setActiveScene(scene + 1);
+            } else if(scene == 3){
+                catgame.setActiveScene(scene + 2);
             }
+        }
     }
 }
