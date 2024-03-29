@@ -32,9 +32,6 @@ public class HeksenhutScene extends DynamicScene {
                 new Size(1550, 10));
         addEntity(bottomFloor);
 
-        var wall = new Wall(new Coordinate2D(540, 670), new Size(10, 100));
-        addEntity(wall);
-
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
@@ -57,13 +54,6 @@ public class HeksenhutScene extends DynamicScene {
         addEntity(heksenkruidZaden);
         Ingredient maanlichtKristallen = new Ingredient("entitys/maanlicht_kristallen.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(maanlichtKristallen);
-
-
-////        ingredients.add(new GeestelijkStof()); 1
-////        ingredients.add(new GriezeligeSpinnenpoten());
-////        ingredients.add(new VleermuizenBloed()); 1
-////        ingredients.add(new HeksenkruidZaden()); 1
-////        ingredients.add(new MaanlichtKristallen()); 1
     }
 
     public Coordinate2D returnRandomLocation(){
