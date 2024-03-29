@@ -157,6 +157,7 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
                 new Random().nextInt((int) (getSceneHeight() - getHeight())))
         );
         health--;
+        health--;
         healthText.setHealthText(health);
 
         if(health < 1){
