@@ -77,16 +77,6 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
 
     }
 
-    private void setCollisionBoxesOnRightMovement() {
-        verticalCollisionBox.setAnchorLocation(RIGHT_GROUND_ANCHOR_LOCATION);
-        horizontalCollisionBox.setAnchorLocation(RIGHT_WALL_ANCHOR_LOCATION);
-    }
-
-    private void setCollisionBoxesOnLeftMovement() {
-        verticalCollisionBox.setAnchorLocation(LEFT_GROUND_ANCHOR_LOCATION);
-        horizontalCollisionBox.setAnchorLocation(LEFT_WALL_ANCHOR_LOCATION);
-    }
-
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         latestPressedKeys = pressedKeys;

@@ -20,20 +20,10 @@ public class Catgame extends YaegerGame {
     }
     public static final int SCENE_SELECTION = 0;
     public static final int SCENE_SECRET = 1;
-    public static final String SCENE_SECRET_TITLE = "Secret";
-
-    public static final String SCENE_SELECTION_TITLE = "Selection";
     public static final int SCENE_DONKEREBOS = 2;
-    public static final String SCENE_DONKEREBOS_TITLE = "Donkere bos";
     public static final int SCENE_HEKSENHUT = 3;
-    public static final String SCENE_HEKSENHUT_TITLE = "Heksen hut";
     public static final int SCENE_GAME_OVER = 4;
-    public static final String SCENE_GAME_OVER_TITLE = "Game Over";
-
     public static final int SCENE_GAME_WON = 5;
-
-    public static final String SCENE_GAME_WON_TITLE = "Game Won";
-
 
 
 
