@@ -34,7 +34,7 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
     private BlackPixelCatFloorCollisionBox verticalCollisionBox;
     private BlackPixelCatWallCollisionBox horizontalCollisionBox;
 
-
+    private BlackPixelCatSlijmCollisionBox slijmCollisionBox;
 
     private BlackPixelCatIngredientCollisionBox ingredient;
 
@@ -61,6 +61,8 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
         ingredient = new BlackPixelCatIngredientCollisionBox(RIGHT_GROUND_ANCHOR_LOCATION, this);
         addEntity(ingredient);
 
+        slijmCollisionBox = new BlackPixelCatSlijmCollisionBox(RIGHT_GROUND_ANCHOR_LOCATION, this);
+        addEntity(slijmCollisionBox);
 
 
 
@@ -160,5 +162,10 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
         if(health < 1){
             catgame.setActiveScene(4);
         }
+    }
+
+    public void handleCollision(final Slijm slijm) {
+        System.out.println("test");
+        setMotion(0.1,Direction.DOWN);
     }
 }

@@ -51,6 +51,8 @@ public class DonkerebosScene extends DynamicScene {
         var boomstronkFloor = new Floor(new Coordinate2D(300, 610),
                 new Size(110, 10));
         addEntity(boomstronkFloor);
+
+
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
@@ -61,6 +63,10 @@ public class DonkerebosScene extends DynamicScene {
         addEntity(ingredientText);
 
         var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),2,ingredientText,healthText,catgame );
+
+
+        Slijm slijm = new Slijm(new Coordinate2D(500,600),blackPixelCat);
+        addEntity(slijm);
         addEntity(blackPixelCat);
 
         Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
@@ -73,9 +79,6 @@ public class DonkerebosScene extends DynamicScene {
         addEntity(drakentandPoeder);
         Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
         addEntity(schedelPoeder);
-
-
-
 
 
 
