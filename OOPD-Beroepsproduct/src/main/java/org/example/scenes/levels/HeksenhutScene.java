@@ -37,8 +37,8 @@ public class HeksenhutScene extends DynamicScene {
         IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
-        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, catgame);
-        addEntity(blackPixelCat);
+//        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, catgame);
+//        addEntity(blackPixelCat);
         Ingredient geetstelijkeStof = new Ingredient("entitys/geestelijkestof.png",returnRandomLocation(), ingredientText, catgame , scene);
         addEntity(geetstelijkeStof);
         Ingredient griezeligeSpinnenpoten = new Ingredient("entitys/spinnenpoot.png",returnRandomLocation(), ingredientText , catgame,scene);

@@ -40,7 +40,7 @@ public class Catgame extends YaegerGame {
     @Override
     public void setupGame() {
         setGameTitle("Cat_Game");
-        setSize(new Size(800, 600));
+        setSize(new Size(1024, 698));
 
     }
 
