@@ -166,6 +166,6 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
 
     public void handleCollision(final Slijm slijm) {
         System.out.println("test");
-        setMotion(0.1,Direction.DOWN);
+        setSpeed(0);
     }
 }
