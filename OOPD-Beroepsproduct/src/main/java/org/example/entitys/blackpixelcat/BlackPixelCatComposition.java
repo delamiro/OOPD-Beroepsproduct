@@ -34,6 +34,8 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
     private BlackPixelCatFloorCollisionBox verticalCollisionBox;
     private BlackPixelCatWallCollisionBox horizontalCollisionBox;
 
+
+
     private BlackPixelCatIngredientCollisionBox ingredient;
 
     private BlackPixelCatRatCollisionBox ratCollisionBox;
@@ -58,6 +60,9 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
 
         ingredient = new BlackPixelCatIngredientCollisionBox(RIGHT_GROUND_ANCHOR_LOCATION, this);
         addEntity(ingredient);
+
+
+
 
         ratCollisionBox = new BlackPixelCatRatCollisionBox(RIGHT_GROUND_ANCHOR_LOCATION, this);
         addEntity(ratCollisionBox);
@@ -151,5 +156,9 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
         );
         health--;
         healthText.setHealthText(health);
+
+        if(health < 1){
+            catgame.setActiveScene(4);
+        }
     }
 }

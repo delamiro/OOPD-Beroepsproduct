@@ -34,12 +34,23 @@ public class DonkerebosScene extends DynamicScene {
     public void setupEntities() {
 
         var bottomFloor = new Floor(new Coordinate2D(0, 670),
-                new Size(550, 10));
+                new Size(1550, 10));
         addEntity(bottomFloor);
 
-        var wall = new Wall(new Coordinate2D(540, 670), new Size(10, 100));
-        addEntity(wall);
+        var boomstronk = new Boomstronk(new Coordinate2D(300, 620),
+                new Size(100, 200));
+        addEntity(boomstronk);
 
+
+        var wall1 = new Wall(new Coordinate2D(300, 670), new Size(10, 60));
+        addEntity(wall1);
+
+        var wall2 = new Wall(new Coordinate2D(400, 670), new Size(10, 60));
+        addEntity(wall2);
+
+        var boomstronkFloor = new Floor(new Coordinate2D(300, 610),
+                new Size(110, 10));
+        addEntity(boomstronkFloor);
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
@@ -50,26 +61,27 @@ public class DonkerebosScene extends DynamicScene {
         addEntity(ingredientText);
 
         var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),2,ingredientText,healthText,catgame );
+        addEntity(blackPixelCat);
+
         Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
-//        addEntity(kattenklauwBladeren);
-//        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(mandragoraWortel);
-//        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(zwarteNachtschadeBessen);
-//        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(drakentandPoeder);
-//        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(schedelPoeder);
+        addEntity(kattenklauwBladeren);
+        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
+        addEntity(mandragoraWortel);
+        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
+        addEntity(zwarteNachtschadeBessen);
+        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
+        addEntity(drakentandPoeder);
+        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
+        addEntity(schedelPoeder);
 
 
 
 
 
 
-        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-44));
+        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-80));
         addEntity(rat);
 
-        addEntity(blackPixelCat);
 
     }
     public Coordinate2D returnRandomLocation(){

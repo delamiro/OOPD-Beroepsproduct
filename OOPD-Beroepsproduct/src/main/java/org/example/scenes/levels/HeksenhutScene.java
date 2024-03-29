@@ -1,13 +1,13 @@
 package org.example.scenes.levels;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import javafx.scene.Scene;
 import org.example.Catgame;
-import org.example.entitys.Ingredient;
+import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
-import org.example.entitys.HealthText;
-import org.example.entitys.IngredientText;
+import org.example.entitys.blackpixelcat.BlackPixelCatComposition;
 
 import java.util.Random;
 
@@ -28,6 +28,13 @@ public class HeksenhutScene extends DynamicScene {
 
     @Override
     public void setupEntities() {
+        var bottomFloor = new Floor(new Coordinate2D(0, 670),
+                new Size(1550, 10));
+        addEntity(bottomFloor);
+
+        var wall = new Wall(new Coordinate2D(540, 670), new Size(10, 100));
+        addEntity(wall);
+
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
@@ -37,8 +44,9 @@ public class HeksenhutScene extends DynamicScene {
         IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
-//        BlackPixelCat blackPixelCat = new BlackPixelCat(new Coordinate2D(getWidth() / 2, getHeight()), healthText, catgame);
-//        addEntity(blackPixelCat);
+        var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),3,ingredientText,healthText,catgame );
+        addEntity(blackPixelCat);
+
         Ingredient geetstelijkeStof = new Ingredient("entitys/geestelijkestof.png",returnRandomLocation(), ingredientText, catgame , scene);
         addEntity(geetstelijkeStof);
         Ingredient griezeligeSpinnenpoten = new Ingredient("entitys/spinnenpoot.png",returnRandomLocation(), ingredientText , catgame,scene);
