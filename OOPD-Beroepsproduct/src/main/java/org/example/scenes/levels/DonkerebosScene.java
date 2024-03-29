@@ -2,6 +2,7 @@ package org.example.scenes.levels;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.*;
@@ -13,11 +14,13 @@ import org.example.entitys.enemys.Rat;
 import java.util.Random;
 
 
-public class DonkerebosScene extends DynamicScene {
+public class DonkerebosScene extends DynamicScene implements TimerContainer {
     public static final double LEFT_MARGIN = 34;
     private static final double DELTA_Y = 40;
 
     public int scene = 2;
+
+    public int time = 30000;
 
     private final Catgame catgame;
     public DonkerebosScene(Catgame catgame) {
@@ -28,6 +31,7 @@ public class DonkerebosScene extends DynamicScene {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/forrest.jpg");
+
     }
 
     @Override
@@ -56,6 +60,11 @@ public class DonkerebosScene extends DynamicScene {
         var y = 20;
         HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(healthText);
+
+        y+= DELTA_Y;
+
+
+        //addEntity(timer);
 
         y+= DELTA_Y;
 
@@ -92,5 +101,10 @@ public class DonkerebosScene extends DynamicScene {
                 new Random().nextInt((int) (getWidth())),
                 new Random().nextInt((int) (getHeight()))
         );
+    }
+
+    @Override
+    public void setupTimers() {
+        addTimer(new GameTimer(time, catgame));
     }
 }

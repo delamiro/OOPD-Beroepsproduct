@@ -6,15 +6,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class HealthText extends TextEntity {
-    public HealthText(Coordinate2D initialLocation){
+public class GameTimerText extends TextEntity{
+    public GameTimerText(Coordinate2D initialLocation) {
         super(initialLocation);
-
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         setFill(Color.WHITE);
     }
 
-    public void setHealthText(int health){
-        setText("Time left: " + health);
+    public void setTimeText(int time){
+        setText("Time left: " + time);
     }
 }
