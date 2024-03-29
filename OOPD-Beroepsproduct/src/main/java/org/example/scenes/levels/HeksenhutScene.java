@@ -2,6 +2,7 @@ package org.example.scenes.levels;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import javafx.scene.Scene;
 import org.example.Catgame;
@@ -11,11 +12,13 @@ import org.example.entitys.blackpixelcat.BlackPixelCatComposition;
 
 import java.util.Random;
 
-public class HeksenhutScene extends DynamicScene {
+public class HeksenhutScene extends DynamicScene implements TimerContainer {
     public static final double LEFT_MARGIN = 34;
     private static final double DELTA_Y = 40;
 
     public int scene = 3;
+
+    public int time = 30000;
 
     private final Catgame catgame;
     public HeksenhutScene(Catgame catgame) {
@@ -61,5 +64,10 @@ public class HeksenhutScene extends DynamicScene {
                 new Random().nextInt(100,500),
                 new Random().nextInt(100,500)
         );
+    }
+
+    @Override
+    public void setupTimers() {
+        addTimer(new GameTimer(time, catgame));
     }
 }
