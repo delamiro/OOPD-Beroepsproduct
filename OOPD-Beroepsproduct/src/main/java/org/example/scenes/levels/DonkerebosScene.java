@@ -65,6 +65,12 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         ingredientText.setIngredientText(0);
         addEntity(ingredientText);
 
+        y+= DELTA_Y;
+
+        GameTimerText gameTimerText = new GameTimerText(new Coordinate2D(LEFT_MARGIN, y));
+        gameTimerText.setTimeText(time);
+        addEntity(gameTimerText);
+
 
         //PixelCat
         var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),2,ingredientText,healthText,catgame,health );

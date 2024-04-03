@@ -22,6 +22,8 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
     private HealthText healthText;
     private IngredientText ingredientText;
 
+    private static final int WALKING_SPEED = 2;
+
     private int ingredientAmount = 0;
     private Catgame catgame;
     private int health;
@@ -59,26 +61,25 @@ public class BlackPixelCatComposition extends DynamicCompositeEntity implements 
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         latestPressedKeys = pressedKeys;
-        if(pressedKeys.contains(KeyCode.LEFT)){
-            setMotion(2,270d);
+
+        if (touchdown && pressedKeys.isEmpty()) {
+            setSpeed(0);
+        }else if(pressedKeys.contains(KeyCode.LEFT)){
+            setMotion(WALKING_SPEED,270d);
             direction_left = true;
         } else if(pressedKeys.contains(KeyCode.RIGHT)){
-            setMotion(2,90d);
+            setMotion(WALKING_SPEED,90d);
             direction_left = false;
         } else if(pressedKeys.contains(KeyCode.UP)){
-            setMotion(2,180d);
+            setMotion(WALKING_SPEED,180d);
         } else if(pressedKeys.contains(KeyCode.DOWN)){
-            setMotion(2,0d);
+            setMotion(WALKING_SPEED,0d);
         }
     }
     public void handleCollision(final Floor ground) {
         setAnchorLocationY(ground.getBoundingBox().getMinY() + 1);
         nullifySpeedInDirection(Direction.DOWN);
         touchdown = true;
-
-        // Since the KeyListeners event handler is only called on a KeyPressed change event,
-        // we use the latestPressedKeys to manually call it and ensure the Witch will behave
-        // accordingly.
         onPressedKeysChange(latestPressedKeys);
     }
 
