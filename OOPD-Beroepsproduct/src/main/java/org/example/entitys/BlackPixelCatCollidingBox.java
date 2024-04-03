@@ -20,6 +20,6 @@ public class BlackPixelCatCollidingBox extends RectangleEntity implements Collid
         setFill(COLOR);
 
         // The Opacity is used to make this floor transparant
-        setOpacity(OPACITY);
+        //setOpacity(OPACITY);
     }
 }

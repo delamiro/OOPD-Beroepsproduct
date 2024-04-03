@@ -44,8 +44,8 @@ public class HeksenhutScene extends DynamicScene implements TimerContainer {
         IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
         addEntity(ingredientText);
 
-        var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),3,ingredientText,healthText,catgame );
-        addEntity(blackPixelCat);
+//        var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),3,ingredientText,healthText,catgame );
+//        addEntity(blackPixelCat);
 
         Ingredient geetstelijkeStof = new Ingredient("entitys/geestelijkestof.png",returnRandomLocation(), ingredientText, catgame , scene);
         addEntity(geetstelijkeStof);

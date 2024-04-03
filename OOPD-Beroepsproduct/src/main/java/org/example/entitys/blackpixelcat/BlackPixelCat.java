@@ -9,8 +9,5 @@ public class BlackPixelCat extends DynamicSpriteEntity {
     public BlackPixelCat(Coordinate2D location, final BlackPixelCatComposition composition){
 
         super("sprites/blacCatPixel.png", location, new Size(40,80), 1, 2);
-
     }
-
-
 }

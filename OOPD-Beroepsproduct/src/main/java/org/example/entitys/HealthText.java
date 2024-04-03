@@ -15,6 +15,6 @@ public class HealthText extends TextEntity {
     }
 
     public void setHealthText(int health){
-        setText("Time left: " + health);
+        setText("Health left: " + health);
     }
 }
