@@ -9,6 +9,8 @@ import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.blackpixelcat.BlackPixelCatComposition;
 import org.example.entitys.enemys.Rat;
+import org.example.entitys.ingredients.IngredientIMP;
+import org.example.entitys.ingredients.Kruid;
 
 
 import java.util.Random;
@@ -31,7 +33,6 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/forrest.jpg");
-
     }
 
     @Override
@@ -76,18 +77,21 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),2,ingredientText,healthText,catgame,health );
         addEntity(blackPixelCat);
 
-
+        Kruid kruid = new Kruid(returnRandomLocation(), ingredientText);
+        addEntity(kruid);
         //ingredienten
-        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
-        addEntity(kattenklauwBladeren);
-        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
-        addEntity(mandragoraWortel);
-        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
-        addEntity(zwarteNachtschadeBessen);
-        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-        addEntity(drakentandPoeder);
-        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-        addEntity(schedelPoeder);
+//        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
+//        addEntity(kattenklauwBladeren);
+//        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
+//        addEntity(mandragoraWortel);
+//        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
+//        addEntity(zwarteNachtschadeBessen);
+//        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
+//        addEntity(drakentandPoeder);
+//        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
+//        addEntity(schedelPoeder);
+
+
 
 
         //Enemys

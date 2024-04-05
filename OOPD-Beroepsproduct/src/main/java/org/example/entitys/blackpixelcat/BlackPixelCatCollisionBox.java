@@ -14,7 +14,7 @@ import org.example.entitys.enemys.Rat;
 
 import java.util.List;
 
-public class BlackPixelCatCollisionBox extends RectangleEntity implements Collided {
+public class BlackPixelCatCollisionBox extends RectangleEntity implements Collider {
     protected BlackPixelCatComposition parent;
 
     public BlackPixelCatCollisionBox(final Coordinate2D initialLocation, final BlackPixelCatComposition parent, Size size) {

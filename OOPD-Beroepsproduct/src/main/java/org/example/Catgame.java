@@ -25,6 +25,9 @@ public class Catgame extends YaegerGame {
     public static final int SCENE_GAME_OVER = 4;
     public static final int SCENE_GAME_WON = 5;
 
+    public static final int SCENE_TEST = 6;
+
+
 
 
     @Override
@@ -48,7 +51,5 @@ public class Catgame extends YaegerGame {
         addScene(SCENE_GAME_OVER,gameOver);
         var gameWon = new GameOverGood(this);
         addScene(SCENE_GAME_WON,gameWon);
-
-
     }
 }
