@@ -49,12 +49,13 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jamir/Desktop/Git-Web/OOPD-Beroepsproduct/OOPD-Beroepsproduct",
+    "last_opened_file_path": "E:/School/Github/OOPD-Beroepsproduct/OOPD-Beroepsproduct",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,7 +81,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -95,6 +97,7 @@
       <workItem from="1710763370631" duration="3779000" />
       <workItem from="1710770935924" duration="26000" />
       <workItem from="1711728285104" duration="1779000" />
+      <workItem from="1712316303673" duration="97000" />
     </task>
     <servers />
   </component>
