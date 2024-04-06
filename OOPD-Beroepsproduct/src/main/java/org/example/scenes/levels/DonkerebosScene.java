@@ -2,101 +2,70 @@ package org.example.scenes.levels;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
-import com.github.hanyaeger.api.TimerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
-import org.example.entitys.blackpixelcat.BlackPixelCatComposition;
+import org.example.entitys.enemys.Enemy;
 import org.example.entitys.enemys.Rat;
-import org.example.entitys.ingredients.IngredientIMP;
+import org.example.entitys.ingredients.Ingredient;
 import org.example.entitys.ingredients.Kruid;
+import org.example.entitys.text.Text;
 
 
 import java.util.Random;
 
 
-public class DonkerebosScene extends DynamicScene implements TimerContainer {
-    public static final double LEFT_MARGIN = 34;
-    private static final double DELTA_Y = 40;
-
-    public int scene = 2;
-    public int health = 10;
-    public int time = 30000;
-
+public class DonkerebosScene extends DynamicScene {
+    public final double LEFT_MARGIN = 34;
+    private final double DELTA_Y = 40;
+    BlackPixelCat blackPixelCat;
     private final Catgame catgame;
-    public DonkerebosScene(Catgame catgame) {
+    private Rat rat;
+    private Kruid kruid;
+
+
+    public DonkerebosScene(Catgame catgame, BlackPixelCat blackPixelCat) {
         this.catgame = catgame;
+        this.blackPixelCat = blackPixelCat;
     }
 
 
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/forrest.jpg");
+
+
+//        Text healthBar = new Text(new Coordinate2D(LEFT_MARGIN, 20));
     }
 
     @Override
     public void setupEntities() {
         //Floor walls
         var bottomFloor = new Floor(new Coordinate2D(0, 670),
-                new Size(1550, 10));
+                new Size(1550, 10),blackPixelCat);
         addEntity(bottomFloor);
-
-        var boomstronkFloor = new Floor(new Coordinate2D(300, 610),
-                new Size(110, 10));
-        addEntity(boomstronkFloor);
-
-        //Boomstronk
-        var boomstronk = new Boomstronk(new Coordinate2D(300, 620),
-                new Size(100, 200));
-        addEntity(boomstronk);
-
-
 
         //Text
         var y = 20;
-        HealthText healthText = new HealthText(new Coordinate2D(LEFT_MARGIN, y));
-        healthText.setHealthText(health);
-        addEntity(healthText);
-
-
-        y+= DELTA_Y;
-
-        IngredientText ingredientText = new IngredientText(new Coordinate2D(LEFT_MARGIN, y));
-        ingredientText.setIngredientText(0);
-        addEntity(ingredientText);
-
-        y+= DELTA_Y;
-
-        GameTimerText gameTimerText = new GameTimerText(new Coordinate2D(LEFT_MARGIN, y));
-        gameTimerText.setTimeText(time);
-        addEntity(gameTimerText);
-
+        Text healthBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
+        String healthText = "Health: " + blackPixelCat.getHealth();
+        healthBar.setText(healthText);
+        addEntity(healthBar);
 
         //PixelCat
-        var blackPixelCat = new BlackPixelCatComposition(new Coordinate2D(getWidth() / 2, getHeight()),2,ingredientText,healthText,catgame,health );
         addEntity(blackPixelCat);
 
-        Kruid kruid = new Kruid(returnRandomLocation(), ingredientText);
-        addEntity(kruid);
-        //ingredienten
-//        Ingredient kattenklauwBladeren = new Ingredient("entitys/kattenklauwBladeren.png",returnRandomLocation(), ingredientText, catgame,scene);
-//        addEntity(kattenklauwBladeren);
-//        Ingredient mandragoraWortel = new Ingredient("entitys/wortel.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(mandragoraWortel);
-//        Ingredient zwarteNachtschadeBessen = new Ingredient("entitys/zwartenachtschadebessen.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(zwarteNachtschadeBessen);
-//        Ingredient drakentandPoeder = new Ingredient("entitys/drakentandpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(drakentandPoeder);
-//        Ingredient schedelPoeder = new Ingredient("entitys/schedelpoeder.png",returnRandomLocation(), ingredientText , catgame,scene);
-//        addEntity(schedelPoeder);
 
-
-
+        //Ingredient
+        kruid = new Kruid();
+        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid);
+        addEntity(kruid1);
 
         //Enemys
-        Rat rat = new Rat(new Coordinate2D(getWidth(), getHeight()-80));
-        addEntity(rat);
+        rat = new Rat(blackPixelCat,healthBar);
+        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat);
+        addEntity(rat1);
 
 
     }
@@ -105,10 +74,5 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
                 new Random().nextInt(100,500),
                 new Random().nextInt(100,500)
         );
-    }
-
-    @Override
-    public void setupTimers() {
-        addTimer(new GameTimer(time, catgame));
     }
 }

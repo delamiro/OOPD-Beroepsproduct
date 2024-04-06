@@ -5,10 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8332d88d-5f67-41f1-9a67-9b07dc8b9055" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatSprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/enemys/EnemyIMP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/ingredients/Ingredient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/text/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatComposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatComposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Catgame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Catgame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/Boomstronk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/GameTimer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/GameTimerText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/HealthText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/Ingredient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/IngredientText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/Slijm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatCollisionBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatCollisionBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/blackpixelcat/BlackPixelCatComposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/enemys/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/enemys/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/enemys/Rat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/enemys/Rat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/ingredients/IngredientIMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/ingredients/IngredientIMP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entitys/ingredients/Kruid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entitys/ingredients/Kruid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/DonkerebosScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/DonkerebosScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/HeksenhutScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/scenes/levels/HeksenhutScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/secret/SecretScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/scenes/selection/SelectionScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/scenes/selection/SelectionScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -46,10 +71,11 @@
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/School/Github/OOPD-Beroepsproduct/OOPD-Beroepsproduct",
+    "last_opened_file_path": "E:/School/Github/yaeger-showcase",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -98,6 +124,7 @@
       <workItem from="1710770935924" duration="26000" />
       <workItem from="1711728285104" duration="1779000" />
       <workItem from="1712316303673" duration="97000" />
+      <workItem from="1712353714058" duration="10204000" />
     </task>
     <servers />
   </component>

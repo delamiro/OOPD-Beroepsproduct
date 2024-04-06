@@ -7,18 +7,32 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
+import org.example.entitys.blackpixelcat.BlackPixelCat;
+import org.example.entitys.blackpixelcat.BlackPixelCatCollisionBox;
+import org.example.entitys.text.Text;
 
 import java.util.List;
 
-public abstract class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collided, Collider {
-    protected Enemy(final String resource, Coordinate2D initialLocation, final Size size) {
-        super(resource, initialLocation, size);
+public class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collided, Collider {
+    private EnemyIMP enemyIMP;
+    public Enemy(Coordinate2D initialLocation, final Size size, EnemyIMP enemyIMP) {
+        super(enemyIMP.getResource(), initialLocation, size);
+        this.enemyIMP = enemyIMP;
+        setMotion(enemyIMP.getSpeed(), enemyIMP.getDirection());
+
     }
     @Override
-    public abstract void notifyBoundaryCrossing(SceneBorder border);
+    public void notifyBoundaryCrossing(SceneBorder border){
+        changeDirection(180);
+    };
 
     @Override
-    public void onCollision(List<Collider> collidingObject) {
+    public void onCollision(final List<Collider> collidingObjects) {
+        for (var collider : collidingObjects) {
+            if (collider instanceof BlackPixelCatCollisionBox) {
+                enemyIMP.hit();
+            }
+        }
     }
 }
 
