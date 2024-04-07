@@ -14,7 +14,6 @@ public class Rat implements EnemyIMP{
     private Direction direction = Direction.valueOf(270d);
     private String resource = "entitys/RATATA.png";
     public Rat(BlackPixelCat blackPixelCat, Text healthBar) {
-        super();
         this.blackPixelCat = blackPixelCat;
         this.healthbar = healthBar;
     }
@@ -30,10 +29,6 @@ public class Rat implements EnemyIMP{
                 new Random().nextDouble(1024),
                 new Random().nextDouble(698)
         ));
-
-        System.out.println("Collided");
-        System.out.println(newHealth);
-        System.out.println("Health 2: " + blackPixelCat.getHealth());
     }
 
     @Override

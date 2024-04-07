@@ -19,7 +19,7 @@ import java.util.Random;
 public class DonkerebosScene extends DynamicScene {
     public final double LEFT_MARGIN = 34;
     private final double DELTA_Y = 40;
-    BlackPixelCat blackPixelCat;
+    private BlackPixelCat blackPixelCat;
     private final Catgame catgame;
     private Rat rat;
     private Kruid kruid;
@@ -34,9 +34,6 @@ public class DonkerebosScene extends DynamicScene {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/forrest.jpg");
-
-
-//        Text healthBar = new Text(new Coordinate2D(LEFT_MARGIN, 20));
     }
 
     @Override
@@ -53,13 +50,19 @@ public class DonkerebosScene extends DynamicScene {
         healthBar.setText(healthText);
         addEntity(healthBar);
 
+        y += DELTA_Y;
+        Text ingredientBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
+        String ingredientBarText = "Ingredients: " + Ingredient.getIngredientsGrabbed();
+        ingredientBar.setText(ingredientBarText);
+        addEntity(ingredientBar);
+
         //PixelCat
         addEntity(blackPixelCat);
 
 
         //Ingredient
-        kruid = new Kruid();
-        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid);
+        kruid = new Kruid(blackPixelCat,healthBar,ingredientBar);
+        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid, ingredientBar);
         addEntity(kruid1);
 
         //Enemys
