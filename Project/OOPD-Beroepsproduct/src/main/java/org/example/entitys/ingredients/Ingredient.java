@@ -4,7 +4,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import org.example.entitys.blackpixelcat.BlackPixelCatCollisionBox;
+import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.text.Text;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class Ingredient extends DynamicSpriteEntity implements Collided, Collide
     @Override
     public void onCollision(final List<Collider> collidingObjects) {
         for (var collider : collidingObjects) {
-            if (collider instanceof BlackPixelCatCollisionBox) {
+            if (collider instanceof BlackPixelCat) {
                 ingredientIMP.onPickUp();
                 remove();
                 ingredientsGrabbed++;

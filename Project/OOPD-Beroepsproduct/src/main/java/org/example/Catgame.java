@@ -37,7 +37,7 @@ public class Catgame extends YaegerGame {
         var selection = new SelectionScene(this);
         addScene(SCENE_SELECTION, selection);
 
-        var blackPixelCat = new BlackPixelCat(new Coordinate2D(0,0),this);
+        var blackPixelCat = new BlackPixelCat(new Coordinate2D(0,0));
 
         var donkerebosScene = new DonkerebosScene(this, blackPixelCat);
         addScene(SCENE_DONKEREBOS, donkerebosScene);

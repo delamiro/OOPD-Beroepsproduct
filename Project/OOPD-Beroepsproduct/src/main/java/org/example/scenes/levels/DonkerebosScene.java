@@ -1,14 +1,10 @@
 package org.example.scenes.levels;
 
-import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.TimerContainer;
-import com.github.hanyaeger.api.entities.impl.TextEntity;
+import com.github.hanyaeger.api.UpdateExposer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import org.example.Catgame;
 import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
@@ -31,7 +27,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Text displayNumberText;
     private SceneTimer secondsTimer;
 
-
+    private Text healthBar;
     public final double LEFT_MARGIN = 34;
     private final double DELTA_Y = 40;
     private BlackPixelCat blackPixelCat;
@@ -62,7 +58,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
         //Text
         var y = 20;
-        Text healthBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
+        healthBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
         String healthText = "Health: " + blackPixelCat.getHealth();
         healthBar.setText(healthText);
         addEntity(healthBar);
@@ -84,7 +80,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
-        kruid = new Kruid(blackPixelCat,healthBar);
+        kruid = new Kruid(blackPixelCat);
         Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid, ingredientBar);
         addEntity(kruid1);
 
@@ -93,12 +89,12 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         addEntity(potion1);
 
         //Enemys
-        rat = new Rat(blackPixelCat,healthBar);
-        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat);
+        rat = new Rat(blackPixelCat);
+        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat,blackPixelCat,healthBar);
         addEntity(rat1);
 
-        monkey = new Monkey(blackPixelCat,healthBar);
-        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey);
+        monkey = new Monkey(blackPixelCat);
+        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey,blackPixelCat,healthBar);
         addEntity(Monkey1);
 
 

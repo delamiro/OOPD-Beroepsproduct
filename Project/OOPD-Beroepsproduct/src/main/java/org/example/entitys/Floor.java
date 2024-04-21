@@ -8,13 +8,12 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
 import com.github.hanyaeger.api.entities.impl.RectangleEntity;
 import javafx.scene.paint.Color;
-import org.example.entitys.blackpixelcat.BlackPixelCatCollisionBox;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 
 import java.util.List;
 
 public class Floor extends RectangleEntity implements Collided {
-    BlackPixelCat blackPixelCat;
+    private BlackPixelCat blackPixelCat;
     public Floor(Coordinate2D initialLocation, Size size, BlackPixelCat blackPixelCat) {
         super(initialLocation, size);
         setAnchorPoint(AnchorPoint.BOTTOM_LEFT);
@@ -25,8 +24,7 @@ public class Floor extends RectangleEntity implements Collided {
     @Override
     public void onCollision(List<Collider> collidingObjects) {
         for (var collider : collidingObjects) {
-            if (collider instanceof BlackPixelCatCollisionBox) {
-                blackPixelCat.setAnchorLocationY(getBoundingBox().getMinY() + 1);
+            if (collider instanceof BlackPixelCat) {
                 blackPixelCat.nullifySpeedInDirection(Direction.DOWN);
             }
         }
