@@ -23,7 +23,7 @@ public class Rat implements EnemyIMP{
         int newHealth = blackPixelCat.getHealth() - damageToPlayer;
         String newHealthText = "Health: " + String.valueOf(newHealth);
         blackPixelCat.setHealth(newHealth);
-        healthbar.changeText(newHealthText);
+        healthbar.setText(newHealthText);
 
         blackPixelCat.setAnchorLocation(new Coordinate2D(
                 new Random().nextDouble(1024),

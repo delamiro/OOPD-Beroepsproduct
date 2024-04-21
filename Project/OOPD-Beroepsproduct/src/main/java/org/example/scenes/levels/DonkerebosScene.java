@@ -17,6 +17,7 @@ import org.example.entitys.enemys.Monkey;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Ingredient;
 import org.example.entitys.ingredients.Kruid;
+import org.example.entitys.ingredients.Potion;
 import org.example.entitys.text.Text;
 import org.example.scenes.levels.timers.SceneTimer;
 
@@ -38,6 +39,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Rat rat;
     private Monkey monkey;
     private Kruid kruid;
+    private Potion potion;
 
 
     public DonkerebosScene(Catgame catgame, BlackPixelCat blackPixelCat) {
@@ -82,9 +84,13 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
-        kruid = new Kruid(blackPixelCat,healthBar,ingredientBar);
+        kruid = new Kruid(blackPixelCat,healthBar);
         Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid, ingredientBar);
         addEntity(kruid1);
+
+        potion = new Potion(this);
+        Ingredient potion1 = new Ingredient(returnRandomLocation(),potion, ingredientBar);
+        addEntity(potion1);
 
         //Enemys
         rat = new Rat(blackPixelCat,healthBar);
@@ -117,5 +123,13 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     public void setupTimers() {
         secondsTimer = new SceneTimer(this);
         addTimer(secondsTimer);
+    }
+
+    public int getDisplayNumber() {
+        return displayNumber;
+    }
+
+    public void setDisplayNumber(int displayNumber) {
+        this.displayNumber = displayNumber;
     }
 }

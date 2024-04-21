@@ -13,8 +13,4 @@ public class Text extends TextEntity {
         setFont(Font.font("Roboto", FontWeight.NORMAL, 30));
         setFill(Color.WHITE);
     }
- 
-    public void changeText(String text) {
-        setText(text);
-    }
 }
