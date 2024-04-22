@@ -20,7 +20,6 @@ public class Catgame extends YaegerGame {
     }
     public  final int SCENE_SELECTION = 0;
     public  final int SCENE_DONKEREBOS = 1;
-//    public final int SCENE_HEKSENHUT = 2;
     public final int SCENE_GAME_OVER = 3;
     public final int SCENE_GAME_WON = 4;
 
@@ -36,13 +35,8 @@ public class Catgame extends YaegerGame {
     public void setupScenes() {
         var selection = new SelectionScene(this);
         addScene(SCENE_SELECTION, selection);
-
-        var blackPixelCat = new BlackPixelCat(new Coordinate2D(0,0));
-
-        var donkerebosScene = new DonkerebosScene(this, blackPixelCat);
+        var donkerebosScene = new DonkerebosScene(this);
         addScene(SCENE_DONKEREBOS, donkerebosScene);
-//        var heksenHut = new HeksenhutScene(this);
-//        addScene(SCENE_HEKSENHUT,heksenHut);
         var gameOver = new GameOverBad(this);
         addScene(SCENE_GAME_OVER,gameOver);
         var gameWon = new GameOverGood(this);

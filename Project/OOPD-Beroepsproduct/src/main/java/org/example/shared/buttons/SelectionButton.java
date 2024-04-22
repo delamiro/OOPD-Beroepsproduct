@@ -11,18 +11,20 @@ import org.example.shared.buttons.Button;
 public class SelectionButton extends Button {
 
     protected Catgame catgame;
-
     public SelectionButton(Coordinate2D initialLocation, final String text, final Catgame catgame, final int scene) {
         super(new Coordinate2D(initialLocation), text, scene);
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
-
         this.catgame = catgame;
-
         setFill(Color.BLUE);
     }
 
     @Override
     public void onMouseButtonPressed(final MouseButton button, final Coordinate2D coordinate2D) {
-        catgame.setActiveScene(getScene());
+        if (getScene() == -1) {
+            catgame.quit();
+        }
+        else {
+            catgame.setActiveScene(getScene());
+        }
     }
 }

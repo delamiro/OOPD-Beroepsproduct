@@ -38,9 +38,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Potion potion;
 
 
-    public DonkerebosScene(Catgame catgame, BlackPixelCat blackPixelCat) {
+    public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
-        this.blackPixelCat = blackPixelCat;
     }
 
 
@@ -51,6 +50,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
     @Override
     public void setupEntities() {
+        blackPixelCat = new BlackPixelCat(new Coordinate2D(0,0));
         //Floor walls
         var bottomFloor = new Floor(new Coordinate2D(0, 670),
                 new Size(1550, 10),blackPixelCat);
