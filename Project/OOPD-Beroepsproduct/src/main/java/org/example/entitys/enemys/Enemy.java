@@ -9,19 +9,18 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.text.Text;
+import org.example.scenes.levels.DonkerebosScene;
 
 import java.util.List;
 import java.util.Random;
 
 public class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collided, Collider {
     private EnemyIMP enemyIMP;
-    private BlackPixelCat blackPixelCat;
-    private Text healthbar;
-    public Enemy(Coordinate2D initialLocation, final Size size, EnemyIMP enemyIMP, BlackPixelCat blackPixelCat, Text Healthbar) {
+    private DonkerebosScene donkerebosScene;
+    public Enemy(Coordinate2D initialLocation, final Size size, EnemyIMP enemyIMP, DonkerebosScene donkerebosScene) {
         super(enemyIMP.getResource(), initialLocation, size);
         this.enemyIMP = enemyIMP;
-        this.blackPixelCat = blackPixelCat;
-        this.healthbar = Healthbar;
+        this.donkerebosScene = donkerebosScene;
         setMotion(enemyIMP.getSpeed(), enemyIMP.getDirection());
 
     }
@@ -35,11 +34,8 @@ public class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWat
         for (var collider : collidingObjects) {
             if (collider instanceof BlackPixelCat) {
                 enemyIMP.hit();
-                healthbar.setText("Health: " + blackPixelCat.getHealth());
-                blackPixelCat.setAnchorLocation(new Coordinate2D(
-                        new Random().nextDouble(1024),
-                        new Random().nextDouble(698)
-                ));
+                donkerebosScene.updateHealthText();
+                donkerebosScene.setBlackPixelCatRandom();
             }
         }
     }

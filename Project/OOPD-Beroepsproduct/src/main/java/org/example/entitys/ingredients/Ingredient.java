@@ -6,17 +6,19 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.entitys.text.Text;
+import org.example.scenes.levels.DonkerebosScene;
 
 import java.util.List;
 
 public class Ingredient extends DynamicSpriteEntity implements Collided, Collider {
     private IngredientIMP ingredientIMP;
     private static int ingredientsGrabbed = 0;
-    private Text ingredientText;
-    public Ingredient(Coordinate2D initialLocation, IngredientIMP ingredientIMP, Text ingredientText) {
+    private DonkerebosScene donkerebosScene;
+
+    public Ingredient(Coordinate2D initialLocation, IngredientIMP ingredientIMP, DonkerebosScene donkerebosScene) {
         super(ingredientIMP.getResource(), initialLocation);
         this.ingredientIMP = ingredientIMP;
-        this.ingredientText = ingredientText;
+        this.donkerebosScene = donkerebosScene;
     }
 
     @Override
@@ -26,8 +28,8 @@ public class Ingredient extends DynamicSpriteEntity implements Collided, Collide
                 ingredientIMP.onPickUp();
                 remove();
                 ingredientsGrabbed++;
-                ingredientText.setText("Ingredients: " + ingredientsGrabbed);
-                System.out.println(ingredientsGrabbed);
+                donkerebosScene.updateHealthText();
+                donkerebosScene.updateIngredientsText();
             }
         }
     }

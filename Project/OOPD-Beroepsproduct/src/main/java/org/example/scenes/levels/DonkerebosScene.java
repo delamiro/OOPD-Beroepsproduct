@@ -28,6 +28,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private SceneTimer secondsTimer;
 
     private Text healthBar;
+    private Text ingredientBar;
     public final double LEFT_MARGIN = 34;
     private final double DELTA_Y = 40;
     private BlackPixelCat blackPixelCat;
@@ -64,7 +65,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         addEntity(healthBar);
 
         y += DELTA_Y;
-        Text ingredientBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
+        ingredientBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
         String ingredientBarText = "Ingredients: " + Ingredient.getIngredientsGrabbed();
         ingredientBar.setText(ingredientBarText);
         addEntity(ingredientBar);
@@ -81,25 +82,41 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
         //Ingredient
         kruid = new Kruid(blackPixelCat);
-        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid, ingredientBar);
+        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid,this);
         addEntity(kruid1);
 
         potion = new Potion(this);
-        Ingredient potion1 = new Ingredient(returnRandomLocation(),potion, ingredientBar);
+        Ingredient potion1 = new Ingredient(returnRandomLocation(),potion,this );
         addEntity(potion1);
 
         //Enemys
         rat = new Rat(blackPixelCat);
-        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat,blackPixelCat,healthBar);
+        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat,this);
         addEntity(rat1);
 
         monkey = new Monkey(blackPixelCat);
-        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey,blackPixelCat,healthBar);
+        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey,this);
         addEntity(Monkey1);
 
 
 
     }
+
+    public void setBlackPixelCatRandom() {
+        blackPixelCat.setAnchorLocation(new Coordinate2D(
+                new Random().nextDouble(1024),
+                new Random().nextDouble(698)
+        ));
+    }
+
+    public void updateHealthText(){
+        healthBar.setText("Health: " + blackPixelCat.getHealth());
+    }
+
+    public void updateIngredientsText(){
+        ingredientBar.setText("Ingredients: " + Ingredient.getIngredientsGrabbed());
+    }
+
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
                 new Random().nextInt(100,500),
