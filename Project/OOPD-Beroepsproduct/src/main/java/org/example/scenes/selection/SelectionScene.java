@@ -22,7 +22,7 @@ public class SelectionScene extends StaticScene {
     @Override
     public void setupEntities() {
 
-        var startButton = new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Start",catgame,1);
+        var startButton = new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Start",catgame, catgame.SCENE_DONKEREBOS);
         addEntity(startButton);
 
         var quitButton = new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2 + 50),"Quit", catgame, -1);

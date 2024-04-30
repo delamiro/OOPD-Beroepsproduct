@@ -28,7 +28,7 @@ public class GameOverGood extends StaticScene {
         winText.setFill(Color.BLACK);
         winText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
         addEntity(winText);
-        var playAgain =  new SelectionButton(new Coordinate2D(getWidth() / 3 + 40, getHeight() / 3), "Play again",catgame,2);
+        var playAgain =  new SelectionButton(new Coordinate2D(getWidth() / 3 + 40, getHeight() / 3), "Play again",catgame, catgame.SCENE_DONKEREBOS);
         playAgain.setFill(Color.BLACK);
         addEntity(playAgain);
     }

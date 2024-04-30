@@ -5,7 +5,6 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
-import org.example.entitys.text.Text;
 import org.example.scenes.levels.DonkerebosScene;
 
 import java.util.List;
@@ -28,6 +27,7 @@ public class Ingredient extends DynamicSpriteEntity implements Collided, Collide
                 ingredientIMP.onPickUp();
                 remove();
                 ingredientsGrabbed++;
+                donkerebosScene.checkForWinOrLose();
                 donkerebosScene.updateHealthText();
                 donkerebosScene.updateIngredientsText();
             }

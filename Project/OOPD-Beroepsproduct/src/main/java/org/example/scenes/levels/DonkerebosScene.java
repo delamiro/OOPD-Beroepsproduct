@@ -8,6 +8,7 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
+import org.example.entitys.enemys.Crow;
 import org.example.entitys.enemys.Enemy;
 import org.example.entitys.enemys.Monkey;
 import org.example.entitys.enemys.Rat;
@@ -37,6 +38,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Monkey monkey;
     private Kruid kruid;
     private Potion potion;
+    private Crow crow;
 
 
     public DonkerebosScene(Catgame catgame) {
@@ -98,7 +100,9 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey,this);
         addEntity(Monkey1);
 
-
+        crow = new Crow(blackPixelCat);
+        Enemy Crow1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),crow,this);
+        addEntity(Crow1);
 
     }
 
@@ -117,6 +121,21 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         ingredientBar.setText("Ingredients: " + Ingredient.getIngredientsGrabbed());
     }
 
+    public void checkForWinOrLose(){
+        // win condition
+        if (Ingredient.getIngredientsGrabbed() == 2){
+            catgame.setActiveScene(catgame.SCENE_GAME_WON);
+        }
+        // lose condition health
+        else if (blackPixelCat.getHealth() < 0) {
+            catgame.setActiveScene(catgame.SCENE_GAME_OVER);
+        }
+        // lose condition time
+        else if(displayNumber <= 0){
+            catgame.setActiveScene(catgame.SCENE_GAME_OVER);
+        }
+    }
+
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
                 new Random().nextInt(100,500),
@@ -125,8 +144,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     }
     public void updateTimer(){
         if (displayNumber <= 0) {
+            checkForWinOrLose();
             displayNumber = COUNTDOWN_NUMBER_START_VALUE;
-            catgame.setActiveScene(catgame.SCENE_GAME_OVER);
         } else {
             displayNumberText.setText("Timers: " +Integer.toString(displayNumber--));
         }

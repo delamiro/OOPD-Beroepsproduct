@@ -28,7 +28,7 @@ public class GameOverBad extends StaticScene {
         loseText.setFill(Color.WHITESMOKE);
         loseText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 80));
         addEntity(loseText);
-        var restartButton =  new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Try again",catgame,2);
+        var restartButton =  new SelectionButton(new Coordinate2D(getWidth() / 2, getHeight() / 2), "Try again",catgame, catgame.SCENE_SELECTION);
         addEntity(restartButton);
     }
 }

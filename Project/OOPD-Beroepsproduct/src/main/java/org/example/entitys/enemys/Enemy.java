@@ -34,6 +34,7 @@ public class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWat
         for (var collider : collidingObjects) {
             if (collider instanceof BlackPixelCat) {
                 enemyIMP.hit();
+                donkerebosScene.checkForWinOrLose();
                 donkerebosScene.updateHealthText();
                 donkerebosScene.setBlackPixelCatRandom();
             }
