@@ -2,29 +2,30 @@ package org.example.shared.buttons;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import org.example.Catgame;
 import org.example.scenes.selection.SelectionScene;
 import org.example.shared.buttons.Button;
 
-public class SelectionButton extends Button {
+public class SelectionButton implements ButtonIMP {
 
-    protected Catgame catgame;
-    public SelectionButton(Coordinate2D initialLocation, final String text, final Catgame catgame, final int scene) {
-        super(new Coordinate2D(initialLocation), text, scene);
-        setAnchorPoint(AnchorPoint.CENTER_CENTER);
+    private int newScene;
+    private Catgame catgame;
+    public SelectionButton(final Catgame catgame, final int newScene) {
         this.catgame = catgame;
-        setFill(Color.BLUE);
+        this.newScene = newScene;
     }
 
     @Override
-    public void onMouseButtonPressed(final MouseButton button, final Coordinate2D coordinate2D) {
-        if (getScene() == -1) {
+    public void doAction() {
+        //get what scene it needs to set to
+        if (newScene == -1) {
             catgame.quit();
         }
         else {
-            catgame.setActiveScene(getScene());
+            catgame.setActiveScene(newScene);
         }
     }
 }

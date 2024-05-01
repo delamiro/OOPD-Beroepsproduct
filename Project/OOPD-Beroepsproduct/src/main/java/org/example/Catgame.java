@@ -20,6 +20,7 @@ public class Catgame extends YaegerGame {
     public  final int SCENE_DONKEREBOS = 1;
     public final int SCENE_GAME_OVER = 2;
     public final int SCENE_GAME_WON = 3;
+    public final int SCENE_QUIT_GAME = -1;
 
 
     @Override

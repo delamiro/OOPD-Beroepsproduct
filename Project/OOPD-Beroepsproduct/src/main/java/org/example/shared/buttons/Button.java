@@ -11,18 +11,17 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import org.example.Catgame;
 
-public abstract class Button extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+public class Button extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
+    private ButtonIMP buttonIMP;
 
-    private int scene;
-
-    public Button(final Coordinate2D initialPosition, final String text, final int scene){
+    public Button(final Coordinate2D initialPosition, final String text, ButtonIMP buttonIMP){
         super(initialPosition, text);
-        this.scene = scene;
+        this.buttonIMP = buttonIMP;
         setFont(Font.font("Roboto", FontWeight.NORMAL, 25));
     }
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-
+        buttonIMP.doAction();
     }
 
     @Override
@@ -33,9 +32,5 @@ public abstract class Button extends TextEntity implements MouseButtonPressedLis
     @Override
     public void onMouseExited() {
         setCursor(Cursor.DEFAULT);
-    }
-
-    public int getScene() {
-        return scene;
     }
 }
