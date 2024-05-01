@@ -1,9 +1,7 @@
 package org.example;
 
-import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.scenes.gameoverscreens.GameOverGood;
 import org.example.scenes.levels.DonkerebosScene;
 import org.example.scenes.gameoverscreens.GameOverBad;
@@ -20,8 +18,8 @@ public class Catgame extends YaegerGame {
     }
     public  final int SCENE_SELECTION = 0;
     public  final int SCENE_DONKEREBOS = 1;
-    public final int SCENE_GAME_OVER = 3;
-    public final int SCENE_GAME_WON = 4;
+    public final int SCENE_GAME_OVER = 2;
+    public final int SCENE_GAME_WON = 3;
 
 
     @Override

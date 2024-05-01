@@ -34,6 +34,7 @@ public abstract class Button extends TextEntity implements MouseButtonPressedLis
     public void onMouseExited() {
         setCursor(Cursor.DEFAULT);
     }
+
     public int getScene() {
         return scene;
     }

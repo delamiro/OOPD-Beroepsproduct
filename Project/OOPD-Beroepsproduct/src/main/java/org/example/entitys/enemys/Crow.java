@@ -7,7 +7,7 @@ import org.example.entitys.blackpixelcat.BlackPixelCat;
 public class Crow implements EnemyIMP{
     private BlackPixelCat blackPixelCat;
     private int damageToPlayer = 1;
-    private int speed = 2;
+    private int speed = 5;
     private Direction direction = Direction.valueOf(45d);
     private String resource = "entitys/enemys/Crow.png";
 

@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, Newtonian, Collider, SceneBorderTouchingWatcher {
-    private final int WALKING_SPEED = 2;
+    private int speed = 2;
     private boolean touchdown = true;
     private Set<KeyCode> latestPressedKeys = new HashSet<>();
     public int health = 10;
@@ -27,21 +27,15 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, N
         latestPressedKeys = pressedKeys;
         if (touchdown && pressedKeys.isEmpty()) {
             setSpeed(0);
-        }else if(pressedKeys.contains(KeyCode.LEFT)){
-            setMotion(WALKING_SPEED,270d);
-        } else if(pressedKeys.contains(KeyCode.RIGHT)){
-            setMotion(WALKING_SPEED,90d);
-        } else if(pressedKeys.contains(KeyCode.UP)){
-            setMotion(WALKING_SPEED,180d);
-        } else if(pressedKeys.contains(KeyCode.DOWN)){
-            setMotion(WALKING_SPEED,0d);
+        }else if(pressedKeys.contains(KeyCode.LEFT) || pressedKeys.contains(KeyCode.A)){
+            setMotion(speed,270d);
+        } else if(pressedKeys.contains(KeyCode.RIGHT) || pressedKeys.contains(KeyCode.D)){
+            setMotion(speed,90d);
+        } else if(pressedKeys.contains(KeyCode.UP) || pressedKeys.contains(KeyCode.W)){
+            setMotion(speed,180d);
+        } else if(pressedKeys.contains(KeyCode.DOWN) || pressedKeys.contains(KeyCode.S)){
+            setMotion(speed,0d);
         }
-    }
-    public void setHealth(int newHealth) {
-        health = newHealth;
-    }
-    public int getHealth() {
-        return health;
     }
 
     @Override
@@ -64,4 +58,21 @@ public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, N
         }
     }
 
+    ///Health
+    public void setHealth(int newHealth) {
+        health = newHealth;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    ///Speed
+    public void setSpeedBlackPixelCat(int newSpeed) {
+        speed = newSpeed;
+    }
+
+    public int getSpeedBlackPixelCat() {
+        return speed;
+    }
 }

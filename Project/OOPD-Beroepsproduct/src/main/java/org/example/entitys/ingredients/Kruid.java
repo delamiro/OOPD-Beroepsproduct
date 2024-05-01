@@ -13,6 +13,7 @@ public class Kruid implements IngredientIMP{
     }
     @Override
     public void onPickUp() {
+        //sets new health blackpixelcat
         int newHealth = blackPixelCat.getHealth() + giveOneHp;
         blackPixelCat.setHealth(newHealth);
     }

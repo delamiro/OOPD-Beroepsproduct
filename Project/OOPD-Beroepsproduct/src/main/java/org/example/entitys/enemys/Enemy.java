@@ -17,8 +17,9 @@ import java.util.Random;
 public class Enemy extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collided, Collider {
     private EnemyIMP enemyIMP;
     private DonkerebosScene donkerebosScene;
-    public Enemy(Coordinate2D initialLocation, final Size size, EnemyIMP enemyIMP, DonkerebosScene donkerebosScene) {
-        super(enemyIMP.getResource(), initialLocation, size);
+
+    public Enemy(Coordinate2D initialLocation, EnemyIMP enemyIMP, DonkerebosScene donkerebosScene) {
+        super(enemyIMP.getResource(), initialLocation, new Size(50,50));
         this.enemyIMP = enemyIMP;
         this.donkerebosScene = donkerebosScene;
         setMotion(enemyIMP.getSpeed(), enemyIMP.getDirection());

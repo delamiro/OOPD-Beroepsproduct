@@ -15,6 +15,7 @@ import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Ingredient;
 import org.example.entitys.ingredients.Kruid;
 import org.example.entitys.ingredients.Potion;
+import org.example.entitys.ingredients.Wortel;
 import org.example.entitys.text.Text;
 import org.example.scenes.levels.timers.SceneTimer;
 
@@ -27,7 +28,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private int displayNumber = COUNTDOWN_NUMBER_START_VALUE;
     private Text displayNumberText;
     private SceneTimer secondsTimer;
-
+    private int ingredientsGrabbed = 0;
     private Text healthBar;
     private Text ingredientBar;
     public final double LEFT_MARGIN = 34;
@@ -38,6 +39,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Monkey monkey;
     private Kruid kruid;
     private Potion potion;
+    private Wortel wortel;
     private Crow crow;
 
 
@@ -49,6 +51,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     @Override
     public void setupScene() {
         setBackgroundImage("backgrounds/forrest.jpg");
+        ingredientsGrabbed = 0;
     }
 
     @Override
@@ -68,7 +71,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
         y += DELTA_Y;
         ingredientBar = new Text(new Coordinate2D(LEFT_MARGIN, y));
-        String ingredientBarText = "Ingredients: " + Ingredient.getIngredientsGrabbed();
+        String ingredientBarText = "Ingredients: " + ingredientsGrabbed;
         ingredientBar.setText(ingredientBarText);
         addEntity(ingredientBar);
 
@@ -91,17 +94,21 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         Ingredient potion1 = new Ingredient(returnRandomLocation(),potion,this );
         addEntity(potion1);
 
+        wortel = new Wortel(blackPixelCat);
+        Ingredient wortel1 = new Ingredient(returnRandomLocation(),wortel,this );
+        addEntity(wortel1);
+
         //Enemys
         rat = new Rat(blackPixelCat);
-        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),new Size(50,50),rat,this);
+        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),rat,this);
         addEntity(rat1);
 
         monkey = new Monkey(blackPixelCat);
-        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),monkey,this);
+        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),monkey,this);
         addEntity(Monkey1);
 
         crow = new Crow(blackPixelCat);
-        Enemy Crow1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),new Size(50,50),crow,this);
+        Enemy Crow1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),crow,this);
         addEntity(Crow1);
 
     }
@@ -118,12 +125,12 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     }
 
     public void updateIngredientsText(){
-        ingredientBar.setText("Ingredients: " + Ingredient.getIngredientsGrabbed());
+        ingredientBar.setText("Ingredients: " + ingredientsGrabbed);
     }
 
     public void checkForWinOrLose(){
         // win condition
-        if (Ingredient.getIngredientsGrabbed() == 2){
+        if (ingredientsGrabbed == 3){
             catgame.setActiveScene(catgame.SCENE_GAME_WON);
         }
         // lose condition health
@@ -163,5 +170,9 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
     public void setDisplayNumber(int displayNumber) {
         this.displayNumber = displayNumber;
+    }
+
+    public void upIngredientsGrabbed(){
+        ingredientsGrabbed++;
     }
 }
