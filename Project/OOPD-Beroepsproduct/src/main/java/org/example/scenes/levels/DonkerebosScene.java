@@ -3,7 +3,6 @@ package org.example.scenes.levels;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.TimerContainer;
-import com.github.hanyaeger.api.UpdateExposer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.*;
@@ -13,9 +12,9 @@ import org.example.entitys.enemys.Enemy;
 import org.example.entitys.enemys.Monkey;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Ingredient;
-import org.example.entitys.ingredients.Kruid;
+import org.example.entitys.ingredients.Powder;
 import org.example.entitys.ingredients.Potion;
-import org.example.entitys.ingredients.Wortel;
+import org.example.entitys.ingredients.Carrot;
 import org.example.entitys.text.Text;
 import org.example.scenes.levels.timers.SceneTimer;
 
@@ -24,24 +23,23 @@ import java.util.Random;
 
 
 public class DonkerebosScene extends DynamicScene implements TimerContainer {
-    public final int COUNTDOWN_NUMBER_START_VALUE = 30;
+    private final int COUNTDOWN_NUMBER_START_VALUE = 30;
     private int displayNumber = COUNTDOWN_NUMBER_START_VALUE;
     private Text displayNumberText;
     private SceneTimer secondsTimer;
     private int ingredientsGrabbed = 0;
     private Text healthBar;
     private Text ingredientBar;
-    public final double LEFT_MARGIN = 34;
+    private final double LEFT_MARGIN = 34;
     private final double DELTA_Y = 40;
     private BlackPixelCat blackPixelCat;
     private final Catgame catgame;
     private Rat rat;
     private Monkey monkey;
-    private Kruid kruid;
+    private Powder powder;
     private Potion potion;
-    private Wortel wortel;
+    private Carrot carrot;
     private Crow crow;
-
 
     public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
@@ -86,16 +84,16 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
-        kruid = new Kruid(blackPixelCat);
-        Ingredient kruid1 = new Ingredient(returnRandomLocation(),kruid,this);
+        powder = new Powder(blackPixelCat);
+        Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
         addEntity(kruid1);
 
         potion = new Potion(this);
         Ingredient potion1 = new Ingredient(returnRandomLocation(),potion,this );
         addEntity(potion1);
 
-        wortel = new Wortel(blackPixelCat);
-        Ingredient wortel1 = new Ingredient(returnRandomLocation(),wortel,this );
+        carrot = new Carrot(blackPixelCat);
+        Ingredient wortel1 = new Ingredient(returnRandomLocation(), carrot,this );
         addEntity(wortel1);
 
         //Enemys
@@ -114,10 +112,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     }
 
     public void setBlackPixelCatRandom() {
-        blackPixelCat.setAnchorLocation(new Coordinate2D(
-                new Random().nextDouble(1024),
-                new Random().nextDouble(698)
-        ));
+        blackPixelCat.setAnchorLocation(returnRandomLocation());
     }
 
     public void updateHealthText(){
@@ -145,8 +140,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
-                new Random().nextInt(100,500),
-                new Random().nextInt(100,500)
+                new Random().nextDouble(1024),
+                new Random().nextDouble(698)
         );
     }
     public void updateTimer(){

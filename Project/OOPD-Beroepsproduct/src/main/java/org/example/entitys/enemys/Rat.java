@@ -5,7 +5,6 @@ import org.example.entitys.blackpixelcat.BlackPixelCat;
 
 public class Rat implements EnemyIMP{
     private BlackPixelCat blackPixelCat;
-
     private int damageToPlayer = 2;
     private int speed = 2;
     private Direction direction = Direction.valueOf(270d);

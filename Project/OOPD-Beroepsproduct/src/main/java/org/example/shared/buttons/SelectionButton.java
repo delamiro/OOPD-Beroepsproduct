@@ -20,7 +20,6 @@ public class SelectionButton implements ButtonIMP {
 
     @Override
     public void doAction() {
-        //get what scene it needs to set to
         if (newScene == -1) {
             catgame.quit();
         }
