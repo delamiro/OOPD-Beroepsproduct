@@ -3,7 +3,7 @@ package org.example.scenes.levels.timers;
 import com.github.hanyaeger.api.Timer;
 import org.example.scenes.levels.DonkerebosScene;
 
-public class SceneTimer extends Timer {
+public class  SceneTimer extends Timer {
 
     private DonkerebosScene scene;
 
