@@ -84,6 +84,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
+
         powder = new Powder(blackPixelCat);
         Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
         addEntity(kruid1);
