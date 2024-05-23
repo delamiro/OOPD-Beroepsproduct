@@ -13,7 +13,7 @@ import org.example.entitys.enemys.Monkey;
 import org.example.entitys.enemys.Rat;
 import org.example.entitys.ingredients.Powder;
 import org.example.entitys.ingredients.Potion;
-import org.example.entitys.ingredients.Carrot;
+import org.example.entitys.ingredients2.Carrot;
 import org.example.entitys.ingredients2.Ingredient;
 import org.example.entitys.text.Text;
 import org.example.scenes.levels.timers.SceneTimer;
@@ -84,10 +84,10 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
-        Ingredient carrot = new org.example.entitys.ingredients2.Carrot(returnRandomLocation(), this,blackPixelCat);
+        Ingredient carrot = new Carrot(returnRandomLocation(), this,blackPixelCat);
         addEntity(carrot);
 
-        Ingredient carrot2 = new org.example.entitys.ingredients2.Carrot(returnRandomLocation(), this,blackPixelCat);
+        Ingredient carrot2 = new Carrot(returnRandomLocation(), this,blackPixelCat);
         addEntity(carrot2);
         //        powder = new Powder(blackPixelCat);
 //        Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
