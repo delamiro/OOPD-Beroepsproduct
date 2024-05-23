@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BlackPixelCat extends DynamicSpriteEntity implements KeyListener, Newtonian, Collider, SceneBorderTouchingWatcher {
-    private int speed = 2;
+    private int speed = 3;
     private boolean touchdown = true;
     private Set<KeyCode> latestPressedKeys = new HashSet<>();
     public int health = 10;

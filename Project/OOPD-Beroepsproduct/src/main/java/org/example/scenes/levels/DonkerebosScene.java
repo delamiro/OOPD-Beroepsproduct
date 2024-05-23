@@ -11,10 +11,10 @@ import org.example.entitys.enemys.Crow;
 import org.example.entitys.enemys.Enemy;
 import org.example.entitys.enemys.Monkey;
 import org.example.entitys.enemys.Rat;
-import org.example.entitys.ingredients.Ingredient;
 import org.example.entitys.ingredients.Powder;
 import org.example.entitys.ingredients.Potion;
 import org.example.entitys.ingredients.Carrot;
+import org.example.entitys.ingredients2.Ingredient;
 import org.example.entitys.text.Text;
 import org.example.scenes.levels.timers.SceneTimer;
 
@@ -84,18 +84,22 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
 
         //Ingredient
+        Ingredient carrot = new org.example.entitys.ingredients2.Carrot(returnRandomLocation(), this,blackPixelCat);
+        addEntity(carrot);
 
-        powder = new Powder(blackPixelCat);
-        Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
-        addEntity(kruid1);
-
-        potion = new Potion(this);
-        Ingredient potion1 = new Ingredient(returnRandomLocation(),potion,this );
-        addEntity(potion1);
-
-        carrot = new Carrot(blackPixelCat);
-        Ingredient wortel1 = new Ingredient(returnRandomLocation(), carrot,this );
-        addEntity(wortel1);
+        Ingredient carrot2 = new org.example.entitys.ingredients2.Carrot(returnRandomLocation(), this,blackPixelCat);
+        addEntity(carrot2);
+        //        powder = new Powder(blackPixelCat);
+//        Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
+//        addEntity(kruid1);
+//
+//        potion = new Potion(this);
+//        Ingredient potion1 = new Ingredient(returnRandomLocation(),potion,this );
+//        addEntity(potion1);
+//
+//        carrot = new Carrot(blackPixelCat);
+//        Ingredient wortel1 = new Ingredient(returnRandomLocation(), carrot,this );
+//        addEntity(wortel1);
 
         //Enemys
         rat = new Rat(blackPixelCat);
@@ -141,8 +145,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
     public Coordinate2D returnRandomLocation(){
         return new Coordinate2D(
-                new Random().nextDouble(1024),
-                new Random().nextDouble(698)
+                new Random().nextDouble(900),
+                new Random().nextDouble(500)
         );
     }
     public void updateTimer(){
