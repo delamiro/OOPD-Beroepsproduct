@@ -28,6 +28,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Text displayNumberText;
     private SceneTimer secondsTimer;
     private int ingredientsGrabbed = 0;
+    private int CARROT_COUNT = 2;
     private Text healthBar;
     private Text ingredientBar;
     private final double LEFT_MARGIN = 34;
@@ -83,12 +84,17 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         addEntity(blackPixelCat);
 
 
-        //Ingredient
+        //Ingredien
+        for (int i = 0; i < CARROT_COUNT; i++) {
+            Ingredient carrot = new Carrot(returnRandomLocation(), this, blackPixelCat);
+            addEntity(carrot);
+        }
+        /* old
         Ingredient carrot = new Carrot(returnRandomLocation(), this,blackPixelCat);
         addEntity(carrot);
 
         Ingredient carrot2 = new Carrot(returnRandomLocation(), this,blackPixelCat);
-        addEntity(carrot2);
+        addEntity(carrot2);*/
         //        powder = new Powder(blackPixelCat);
 //        Ingredient kruid1 = new Ingredient(returnRandomLocation(), powder,this);
 //        addEntity(kruid1);
