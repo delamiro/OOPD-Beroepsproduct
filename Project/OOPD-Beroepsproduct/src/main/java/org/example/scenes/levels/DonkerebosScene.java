@@ -7,10 +7,10 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import org.example.Catgame;
 import org.example.entitys.*;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
-import org.example.entitys.enemys.Crow;
-import org.example.entitys.enemys.Enemy;
-import org.example.entitys.enemys.Monkey;
-import org.example.entitys.enemys.Rat;
+import org.example.entitys.enemys2.Crow;
+import org.example.entitys.enemys2.Enemy;
+import org.example.entitys.enemys2.Monkey;
+import org.example.entitys.enemys2.Rat;
 import org.example.entitys.ingredients.Powder;
 import org.example.entitys.ingredients.Potion;
 import org.example.entitys.ingredients2.Carrot;
@@ -35,12 +35,14 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private final double DELTA_Y = 40;
     private BlackPixelCat blackPixelCat;
     private final Catgame catgame;
-    private Rat rat;
-    private Monkey monkey;
     private Powder powder;
     private Potion potion;
-    private Carrot carrot;
-    private Crow crow;
+    private Ingredient[] ingredients = new Ingredient[CARROT_COUNT];
+    private Enemy[] enemies = {
+            new Rat(new Coordinate2D(getWidth(), getHeight() - 80), blackPixelCat, this),
+            new Monkey(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this),
+            new Crow(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this)
+    };
 
     public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
@@ -86,8 +88,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 
         //Ingredien
         for (int i = 0; i < CARROT_COUNT; i++) {
-            Ingredient carrot = new Carrot(returnRandomLocation(), this, blackPixelCat);
-            addEntity(carrot);
+            ingredients[i] = new Carrot(returnRandomLocation(), this, blackPixelCat);
+            addEntity(ingredients[i]);
         }
         /* old
         Ingredient carrot = new Carrot(returnRandomLocation(), this,blackPixelCat);
@@ -107,18 +109,9 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 //        Ingredient wortel1 = new Ingredient(returnRandomLocation(), carrot,this );
 //        addEntity(wortel1);
 
-        //Enemys
-        rat = new Rat(blackPixelCat);
-        Enemy rat1 = new Enemy(new Coordinate2D(getWidth(), getHeight()-80),rat,this);
-        addEntity(rat1);
-
-        monkey = new Monkey(blackPixelCat);
-        Enemy Monkey1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),monkey,this);
-        addEntity(Monkey1);
-
-        crow = new Crow(blackPixelCat);
-        Enemy Crow1 = new Enemy(new Coordinate2D(getWidth()/2, getHeight()-80),crow,this);
-        addEntity(Crow1);
+        for (Enemy enemy : enemies) {
+            addEntity(enemy);
+        }
 
     }
 
