@@ -12,6 +12,7 @@ public class Monkey implements EnemyIMP{
     public Monkey(BlackPixelCat blackPixelCat){
         this.blackPixelCat = blackPixelCat;
     }
+
     @Override
     public void hit() {
         int newHealth = blackPixelCat.getHealth() - damageToPlayer;
