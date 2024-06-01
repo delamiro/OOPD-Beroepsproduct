@@ -1,6 +1,7 @@
 package org.example.entitys.enemys2;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Direction;
 import org.example.entitys.blackpixelcat.BlackPixelCat;
 import org.example.scenes.levels.DonkerebosScene;

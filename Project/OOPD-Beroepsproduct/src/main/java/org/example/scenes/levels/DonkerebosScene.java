@@ -28,7 +28,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private Text displayNumberText;
     private SceneTimer secondsTimer;
     private int ingredientsGrabbed = 0;
-    private int CARROT_COUNT = 2;
+    private final int CARROT_COUNT = 3;
     private Text healthBar;
     private Text ingredientBar;
     private final double LEFT_MARGIN = 34;
@@ -37,12 +37,6 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
     private final Catgame catgame;
     private Powder powder;
     private Potion potion;
-    private Ingredient[] ingredients = new Ingredient[CARROT_COUNT];
-    private Enemy[] enemies = {
-            new Rat(new Coordinate2D(getWidth(), getHeight() - 80), blackPixelCat, this),
-            new Monkey(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this),
-            new Crow(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this)
-    };
 
     public DonkerebosScene(Catgame catgame) {
         this.catgame = catgame;
@@ -86,7 +80,8 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         addEntity(blackPixelCat);
 
 
-        //Ingredien
+        //Ingredients
+        Ingredient[] ingredients = new Ingredient[CARROT_COUNT];
         for (int i = 0; i < CARROT_COUNT; i++) {
             ingredients[i] = new Carrot(returnRandomLocation(), this, blackPixelCat);
             addEntity(ingredients[i]);
@@ -108,7 +103,12 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
 //        carrot = new Carrot(blackPixelCat);
 //        Ingredient wortel1 = new Ingredient(returnRandomLocation(), carrot,this );
 //        addEntity(wortel1);
-
+        // initialized here in order to make sure the scene's dimensions are available
+        Enemy[] enemies = {
+                new Rat(new Coordinate2D(getWidth(), getHeight() - 80), blackPixelCat, this),
+                new Monkey(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this),
+                new Crow(new Coordinate2D(getWidth() / 2, getHeight() - 80), blackPixelCat, this)
+        };
         for (Enemy enemy : enemies) {
             addEntity(enemy);
         }

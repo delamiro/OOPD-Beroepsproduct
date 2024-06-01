@@ -17,14 +17,14 @@ public abstract class Enemy extends DynamicSpriteEntity implements SceneBorderCr
     protected DonkerebosScene donkerebosScene;
 
     public Enemy(String resource, Coordinate2D initialLocation, BlackPixelCat blackPixelCat, DonkerebosScene donkerebosScene) {
-        super(resource, initialLocation);
+        super(resource, initialLocation, new Size(50,50));
         this.blackPixelCat = blackPixelCat;
         this.donkerebosScene = donkerebosScene;
     }
     @Override
     public void notifyBoundaryCrossing(SceneBorder border){
         changeDirection(180);
-    };
+    }
 
     @Override
     public void onCollision(final List<Collider> collidingObjects) {
