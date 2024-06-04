@@ -38,4 +38,8 @@ public abstract class Enemy extends DynamicSpriteEntity implements SceneBorderCr
         }
     }
     public abstract void hit();
+
+    public void talk(){
+        System.out.println("I am a enemy!");
+    }
 }

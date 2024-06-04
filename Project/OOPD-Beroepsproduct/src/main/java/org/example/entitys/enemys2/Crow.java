@@ -23,4 +23,9 @@ public class Crow extends Enemy{
         blackPixelCat.setHealth(newHealth);
     }
 
+    @Override
+    public void talk(){
+        System.out.println("Ik ben een crow!");
+    }
+
 }

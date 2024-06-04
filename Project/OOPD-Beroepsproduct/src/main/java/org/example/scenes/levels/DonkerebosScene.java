@@ -111,6 +111,7 @@ public class DonkerebosScene extends DynamicScene implements TimerContainer {
         };
         for (Enemy enemy : enemies) {
             addEntity(enemy);
+            enemy.talk();
         }
 
     }

@@ -21,6 +21,9 @@ public class Rat extends Enemy{
         int newHealth = blackPixelCat.getHealth() - DAMAGE_TO_PLAYER;
         blackPixelCat.setHealth(newHealth);
     }
-
+    @Override
+    public void talk(){
+        System.out.println("Ik ben een rat!");
+    }
 
 }
